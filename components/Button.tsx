@@ -8,6 +8,7 @@ import {TextSize} from "@/enums/TextSize";
 interface ButtonProps {
 	type: ButtonType;
 	height?: number;
+	radius?: number;
 	children?: ReactNode;
 }
 
@@ -18,6 +19,7 @@ interface StyleType extends ViewStyle, TextStyle {
 const StyledButton = ({
 	type = ButtonType.Primary,
 	height = 56,
+	radius = 8,
 	children
 }: ButtonProps) => {
 	const colorScheme = useColorScheme() ?? 'light';
@@ -28,7 +30,7 @@ const StyledButton = ({
 		color: 'white',
 		backgroundColor: '#000',
 
-		borderRadius: 8,
+		borderRadius: radius,
 
 		display: 'flex',
 		justifyContent: 'center',
