@@ -62,6 +62,6 @@ export interface IColorToken {
 }
 
 export interface IColor {
-	light: IColorToken,
-	dark: IColorToken
+    light: IColorToken,
+    dark: IColorToken
 }
