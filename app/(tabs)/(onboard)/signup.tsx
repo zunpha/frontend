@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Keyboard, Pressable, StyleSheet } from 'react-native';
 import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
 import View from '@/components/views/View';
@@ -23,7 +23,6 @@ export default function OnboardScreen() {
 
 	const colorScheme = useColorScheme();
 
-
 	useEffect(() => {
 		const regex = RegexList.phoneNumber;
 
@@ -46,12 +45,20 @@ export default function OnboardScreen() {
 		setIsSigningUp(true);
 		setVerifyButtonText('인증번호 다시 받기 (00분 00초 후)');
 		setHasStartedSigningUp(true); // 처음으로 시작 상태를 true로 설정
+
+		if (!isSigningUp) {
+			Keyboard.dismiss(); // 키보드 숨기기
+		}
 	};
 
 	const { addToast, toasts } = useToastStore((state) => state);
 
 	return (
-		<>
+		<Pressable style={ {
+			flex: 1,
+		} } onPress={ () => {
+			Keyboard.dismiss();
+		} } accessible={ true }>
 			<View style={ styles.container }>
 				<View style={ styles.title }>
 					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
@@ -67,6 +74,7 @@ export default function OnboardScreen() {
 						value={ phoneNumber }
 						onChangeText={ setPhoneNumber }
 						keyboardType={ 'number-pad' }
+						editable={ !isSigningUp }
 					/>
 					<Button height={ 56 } disabled={ isVerifyButtonDisabled } onPress={ handleSignUpPress }>
 						{ verifyButtonText }
@@ -92,14 +100,12 @@ export default function OnboardScreen() {
 							</MotiView>
 						) }
 					</AnimatePresence>
-					{
-						isSigningUp || (
-							<View style={ styles.contactContainer }>
-								<Text size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</Text>
-								<Text size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</Text>
-							</View>
-						)
-					}
+					{ !isSigningUp && (
+						<View style={ styles.contactContainer }>
+							<Text size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</Text>
+							<Text size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</Text>
+						</View>
+					) }
 					{ isSigningUp && (
 						<MotiText
 							from={ { translateY: -136, opacity: 1 } } // 초기 애니메이션 없음
@@ -122,12 +128,13 @@ export default function OnboardScreen() {
 					addToast(`test ${ Date.now() }`, 3000);
 				} }>test</Button>
 			</View>
-		</>
+		</Pressable>
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
+		flex: 1, // Ensure the view takes up the full screen
 		marginTop: 24,
 		paddingHorizontal: 16,
 		gap: 24,

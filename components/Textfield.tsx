@@ -7,9 +7,10 @@ interface TextfieldProps {
 	onChangeText: (text: string) => void;
 	error?: boolean;
 	keyboardType?: KeyboardType;
+	editable?: boolean;
 }
 
-const Textfield = ({ placeholder, value, onChangeText, error = false, keyboardType }: TextfieldProps) => {
+const Textfield = ({ placeholder, value, onChangeText, error = false, keyboardType, editable }: TextfieldProps) => {
 	const colorScheme = useColorScheme() ?? 'light';
 
 	const textfieldStyle: TextStyle = {
@@ -26,6 +27,7 @@ const Textfield = ({ placeholder, value, onChangeText, error = false, keyboardTy
 			value={ value }
 			onChangeText={ onChangeText }
 			keyboardType={ keyboardType }
+			editable={ editable }
 		/>
 	);
 };
