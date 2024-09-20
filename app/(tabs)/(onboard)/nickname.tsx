@@ -5,7 +5,7 @@ import View from '@/components/views/View';
 import { useColorScheme } from '@/components/useColorScheme';
 import Textfield from '@/components/Textfield';
 import Button from '@/components/Button';
-import useOnboardStore from '@/.expo/stores/onboardStore';
+import useOnboardStore from '@/stores/onboardStore';
 
 export default function NicknameScreen() {
 	const {

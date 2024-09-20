@@ -10,9 +10,9 @@ import { AnimatePresence, MotiText, MotiView } from 'moti';
 import { getSizeStyle } from '@/utils/getTextSize';
 import { useColorScheme } from '@/components/useColorScheme';
 import { Colors } from '@/constants/Colors';
-import useToastStore from '@/.expo/stores/toastStore';
+import useToastStore from '@/stores/toastStore';
 import { router } from 'expo-router';
-import useOnboardStore from '@/.expo/stores/onboardStore';
+import useOnboardStore from '@/stores/onboardStore';
 
 export default function SignUpScreen() {
 	const {

@@ -3,7 +3,7 @@ import { router, Slot } from 'expo-router';
 import { SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
 import BackIcon from '@/components/icons/BackIcon';
 import View from '@/components/views/View';
-import useToastStore from '@/.expo/stores/toastStore';
+import useToastStore from '@/stores/toastStore';
 import Toast from '@/components/Toast';
 
 export default function OnboardLayout() {
