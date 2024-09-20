@@ -1,0 +1,25 @@
+// components/Text.tsx
+import {Text as RN_Text, TextStyle, useColorScheme} from "react-native";
+import {TextSize} from "@/enums/TextSize";
+import {getSizeStyle} from "@/utils/getTextSize";
+import {FC, ReactNode} from "react";
+import {Colors} from "@/constants/Colors";
+
+interface TextProps {
+	size: TextSize;
+	color: keyof typeof Colors.light & keyof typeof Colors.dark;
+	children: ReactNode;
+}
+
+const Text: FC<TextProps> = ({size, color, children}) => {
+	// 기기 테마 색상을 가져옵니다
+	const colorScheme = useColorScheme();
+	const textStyle: TextStyle = {
+		...getSizeStyle(size),
+		color: colorScheme === 'dark' ? Colors.light[color] : Colors.dark[color],
+	}
+
+	return <RN_Text style={textStyle}>{children}</RN_Text>;
+};
+
+export default Text;
