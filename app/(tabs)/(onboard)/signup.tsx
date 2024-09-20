@@ -91,8 +91,8 @@ export default function OnboardScreen() {
 				{
 					isSigningUp || (
 						<View style={styles.contactContainer}>
-							<Text size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</Text>
-							<Text size={ TextSize.BodyLarge } color={ 'brand.blue50' }>문의하기</Text>
+							<Text size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</Text>
+							<Text size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</Text>
 						</View>
 					)
 				}
@@ -103,10 +103,14 @@ export default function OnboardScreen() {
 						style={ {
 							fontSize: getSizeStyle(TextSize.BodySmall).fontSize,
 							color: colorScheme === 'dark' ? Colors.dark['grayScale.primary70'] : Colors.light['grayScale.primary70'],
+							marginVertical: 8,
 						} }
 						transition={ { type: 'timing', duration: 300 } }
 					>
-						전화번호를 변경하셨나요? 문의하기
+						<View style={styles.contactContainer}>
+							<Text size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</Text>
+							<Text size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</Text>
+						</View>
 					</MotiText>
 				) }
 			</View>
