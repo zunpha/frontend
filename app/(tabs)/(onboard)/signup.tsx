@@ -11,14 +11,19 @@ import { getSizeStyle } from '@/utils/getTextSize';
 import { useColorScheme } from '@/components/useColorScheme';
 import { Colors } from '@/constants/Colors';
 import useToastStore from '@/.expo/stores/toastStore';
+import { router } from 'expo-router';
+import useOnboardStore from '@/.expo/stores/onboardStore';
 
-export default function OnboardScreen() {
-	const [ verifyButtonText, setVerifyButtonText ] = useState('인증번호 받기');
-	const [ phoneNumber, setPhoneNumber ] = useState('');
+export default function SignUpScreen() {
+	const {
+		phoneNumber, setPhoneNumber,
+		isSigningUp, setIsSigningUp,
+		verificationCode, setVerificationCode,
+		isLoaded, setIsLoaded,
+		isVerified, setIsVerified,
+	} = useOnboardStore((state) => state);
 	const [ isVerifyButtonDisabled, setIsVerifyButtonDisabled ] = useState(true);
-	const [ isSigningUp, setIsSigningUp ] = useState(false);
 	const [ isStartButtonDisabled, setIsStartButtonDisabled ] = useState(true);
-	const [ verifyCode, setVerifyCode ] = useState('');
 	const [ hasStartedSigningUp, setHasStartedSigningUp ] = useState(false); // 추가된 상태
 
 	const colorScheme = useColorScheme();
@@ -34,16 +39,23 @@ export default function OnboardScreen() {
 	}, [ phoneNumber ]);
 
 	useEffect(() => {
-		if (verifyCode.length === 6) {
+		if (verificationCode.length === 6) {
 			setIsStartButtonDisabled(false);
 		} else {
 			setIsStartButtonDisabled(true);
 		}
-	}, [ verifyCode ]);
+	}, [ verificationCode ]);
+
+	useEffect(() => {
+		if (isSigningUp) {
+			setTimeout(() => {
+				setIsLoaded(true);
+			}, 300);
+		}
+	}, [ isSigningUp ]);
 
 	const handleSignUpPress = () => {
 		setIsSigningUp(true);
-		setVerifyButtonText('인증번호 다시 받기 (00분 00초 후)');
 		setHasStartedSigningUp(true); // 처음으로 시작 상태를 true로 설정
 
 		if (!isSigningUp) {
@@ -77,7 +89,7 @@ export default function OnboardScreen() {
 						editable={ !isSigningUp }
 					/>
 					<Button height={ 56 } disabled={ isVerifyButtonDisabled } onPress={ handleSignUpPress }>
-						{ verifyButtonText }
+						{ isSigningUp ? '인증번호 다시 받기 (00분 00초 후)' : '인증번호 받기' }
 					</Button>
 					<AnimatePresence>
 						{ isSigningUp && (
@@ -90,11 +102,15 @@ export default function OnboardScreen() {
 							>
 								<Textfield
 									placeholder={ '인증번호를 입력하세요' }
-									value={ verifyCode }
-									onChangeText={ setVerifyCode }
+									value={ verificationCode }
+									onChangeText={ setVerificationCode }
 									keyboardType={ 'number-pad' }
+									editable={ !isVerified }
 								/>
-								<Button height={ 56 } disabled={ isStartButtonDisabled }>
+								<Button height={ 56 } disabled={ isStartButtonDisabled } onPress={ () => {
+									router.push('/(onboard)/nickname');
+									setIsVerified(true);
+								} }>
 									동의하고 시작하기
 								</Button>
 							</MotiView>
@@ -108,7 +124,7 @@ export default function OnboardScreen() {
 					) }
 					{ isSigningUp && (
 						<MotiText
-							from={ { translateY: -136, opacity: 1 } } // 초기 애니메이션 없음
+							from={ { translateY: isLoaded ? 0 : -136, opacity: 1 } } // 초기 애니메이션 없음
 							animate={ { translateY: isSigningUp && hasStartedSigningUp ? 0 : 0, opacity: 1 } } // 추가 애니메이션은 생겼을 때만
 							style={ {
 								fontSize: getSizeStyle(TextSize.BodySmall).fontSize,
