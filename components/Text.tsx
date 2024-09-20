@@ -16,7 +16,7 @@ const StyledText: FC<TextProps> = ({size, color, children}) => {
 	const colorScheme = useColorScheme();
 	const textStyle: TextStyle = {
 		...getSizeStyle(size),
-		color: colorScheme === 'dark' ? Colors.light[color] : Colors.dark[color],
+		color: colorScheme === 'dark' ? Colors.dark[color] : Colors.light[color],
 	}
 
 	return <Text style={textStyle}>{children}</Text>;
