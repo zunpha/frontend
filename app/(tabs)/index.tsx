@@ -1,18 +1,19 @@
-import {Image, SafeAreaView, StyleSheet, View} from 'react-native';
-import Text from "@/components/Text";
-import {TextSize} from "@/enums/TextSize";
-import Button from "@/components/Button";
-import {ButtonType} from "@/enums/Button";
-import Svg, {Path} from "react-native-svg";
-import Onboard_Title from '@/assets/images/onboard_image.png'
+import { Image, SafeAreaView, StyleSheet } from 'react-native';
+import View from '@/components/views/View';
+import Text from '@/components/Text';
+import { TextSize } from '@/enums/TextSize';
+import Button from '@/components/Button';
+import Svg, { Path } from 'react-native-svg';
+import Onboard_Title from '@/assets/images/onboard_image.png';
+import { router } from 'expo-router';
 
 export default function TabOneScreen() {
 	return (
-		<SafeAreaView style={styles.container}>
-			<View style={styles.main}>
+		<SafeAreaView style={ styles.container }>
+			<View style={ styles.main }>
 				<Svg
-					width={289}
-					height={79}
+					width={ 289 }
+					height={ 79 }
 				>
 					<Path
 						fill="#5650FF"
@@ -24,14 +25,16 @@ export default function TabOneScreen() {
 					/>
 				</Svg>
 				<Image
-					style={styles.onboardTitle}
-					source={Onboard_Title}/>
+					style={ styles.onboardTitle }
+					source={ Onboard_Title } />
 			</View>
-			<View style={styles.actionButtonContainer}>
-				<Button radius={12} height={52} type={ButtonType.Primary}>전파 시작하기</Button>
-				<View style={styles.reLoginContainer}>
-					<Text size={TextSize.BodyLarge} color={'grayScale.primary50'}>이미 계정이 있나요?</Text>
-					<Text size={TextSize.BodyLarge} color={'brand.blue50'}>로그인</Text>
+			<View style={ styles.actionButtonContainer }>
+				<Button radius={ 12 } height={ 52 } onPress={ () => {
+					router.push('/(onboard)/signup');
+				} }>전파 시작하기</Button>
+				<View style={ styles.reLoginContainer }>
+					<Text size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>이미 계정이 있나요?</Text>
+					<Text size={ TextSize.BodyLarge } color={ 'brand.blue50' }>로그인</Text>
 				</View>
 			</View>
 		</SafeAreaView>
@@ -40,13 +43,11 @@ export default function TabOneScreen() {
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: 'white',
-
 		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',
 
-		padding: 16
+		padding: 16,
 	},
 	main: {
 		flex: 1,

@@ -5,7 +5,7 @@ export enum TextSize {
 	DisplaySmall = 48,
 	TitleLarge = 32,
 	TitleMedium = 28,
-	TitleSmall = 24.1,
+	TitleSmall = 24,
 	HeadingLarge = 24,
 	HeadingSmall = 20,
 	BodyLarge = 16,
