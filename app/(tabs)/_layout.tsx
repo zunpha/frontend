@@ -1,7 +1,6 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import {Stack, Tabs} from 'expo-router';
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {Stack} from 'expo-router';
 
 function TabBarIcon(props: {
 	name: React.ComponentProps<typeof FontAwesome>['name'];
@@ -13,13 +12,15 @@ function TabBarIcon(props: {
 export default function TabLayout() {
 	return (
 		<Stack
+			initialRouteName="onboard/index"
 			screenOptions={{
 				headerShown: false,
-			}}>
+			}}
+		>
 			<Stack.Screen
-				name="index"
+				name="onboard/index"
 				options={{
-					title: 'Tab One',
+					title: 'Onboard',
 				}}
 			/>
 			<Stack.Screen
