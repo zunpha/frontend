@@ -1,4 +1,7 @@
 export interface IColorToken {
+	"white": string,
+	"black": string,
+
 	"brand.blue1": string,
 	"brand.blue10": string,
 	"brand.blue20": string,

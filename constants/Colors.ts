@@ -2,6 +2,9 @@ import {IColor} from "@/types/color";
 
 export const Colors: IColor = {
     light: {
+        "white": "#FFFFFF",
+        "black": "#000000",
+
         "brand.blue1": "#ECF0FF",
         "brand.blue10": "#DDE3FF",
         "brand.blue20": "#C2CCFF",
@@ -64,6 +67,9 @@ export const Colors: IColor = {
         "system.negative100": "#000000",
     },
     dark: {
+        "white": "#FFFFFF",
+        "black": "#000000",
+
         "brand.blue1": "#1D1650",
         "brand.blue10": "#2E2689",
         "brand.blue20": "#3525AE",
