@@ -90,7 +90,10 @@ export default function OnboardScreen() {
 				</AnimatePresence>
 				{
 					isSigningUp || (
-						<Text size={ TextSize.BodySmall } color={ 'grayScale.primary70' }>전화번호를 변경하셨나요? 문의하기</Text>
+						<View style={styles.contactContainer}>
+							<Text size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</Text>
+							<Text size={ TextSize.BodyLarge } color={ 'brand.blue50' }>문의하기</Text>
+						</View>
 					)
 				}
 				{ isSigningUp && (
@@ -133,4 +136,12 @@ const styles = StyleSheet.create({
 		width: '100%',
 		gap: 12,
 	},
+
+	contactContainer: {
+		display: 'flex',
+		flexDirection: 'row',
+		gap: 4,
+
+		marginVertical: 8,
+	}
 });
