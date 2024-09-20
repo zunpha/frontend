@@ -47,18 +47,30 @@ export default function RootLayout() {
 	return <RootLayoutNav />;
 }
 
+const MyDefaultTheme = {
+	...DefaultTheme,
+	colors: {
+		...DefaultTheme.colors,
+		background: Colors['light']['grayScale.primary5'],
+	},
+};
+
+const MyDarkTheme = {
+	...DarkTheme,
+	colors: {
+		...DarkTheme.colors,
+		background: Colors['dark']['grayScale.primary5'],
+	},
+};
+
 function RootLayoutNav() {
 	const colorScheme = useColorScheme();
 
 	return (
-		<ThemeProvider value={ colorScheme === 'dark' ? DarkTheme : DefaultTheme }>
-			<Stack screenOptions={ {
-				headerStyle: {
-					backgroundColor: colorScheme === 'dark' ? Colors.dark['grayScale.primary5'] : Colors.light['grayScale.primary5'],
-				},
-			} }>
+		<ThemeProvider value={ colorScheme === 'dark' ? MyDarkTheme : MyDefaultTheme }>
+			<Stack>
 				<Stack.Screen name="(tabs)" options={ { headerShown: false } } />
 			</Stack>
 		</ThemeProvider>
 	);
-}
+};

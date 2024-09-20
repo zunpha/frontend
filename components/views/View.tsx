@@ -13,7 +13,7 @@ interface ViewProps {
 const StyledView: FC<ViewProps> = ({ backgroundColor, children, style }) => {
 	const colorScheme = useColorScheme();
 	const viewStyle: ViewStyle = {
-		backgroundColor: backgroundColor ? (colorScheme === 'dark' ? Colors.light[backgroundColor] : Colors.dark[backgroundColor]) : undefined,
+		backgroundColor: (backgroundColor && colorScheme) ? Colors[colorScheme]['grayScale.primary5'] : undefined,
 		...style,
 	};
 
