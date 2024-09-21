@@ -9,13 +9,15 @@ interface TextProps {
 	size: TextSize;
 	color: keyof typeof Colors.light & keyof typeof Colors.dark;
 	children: ReactNode;
+	style?: TextStyle;
 }
 
-const StyledText: FC<TextProps> = ({ size, color, children }) => {
+const StyledText: FC<TextProps> = ({ size, color, children, style }) => {
 	// 기기 테마 색상을 가져옵니다
 	const colorScheme = useColorScheme();
 	const textStyle: TextStyle = {
 		...getSizeStyle(size),
+		...style,
 		color: colorScheme === 'dark' ? Colors.dark[color] : Colors.light[color],
 	};
 

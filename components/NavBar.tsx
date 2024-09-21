@@ -1,5 +1,5 @@
 import View from "@/components/views/View";
-import {StyleSheet, TouchableOpacity, useColorScheme} from "react-native";
+import {Platform, StyleSheet, TouchableOpacity, useColorScheme} from "react-native";
 import Text from "@/components/Text";
 import {TextSize} from "@/enums/TextSize";
 import {cloneElement, ReactElement, ReactNode} from "react";
@@ -10,9 +10,10 @@ interface ItemProps {
 	icon: ReactElement;
 	title: string;
 	selected: boolean;
+	onClick?: () => void;
 }
 
-function Item({icon, title, selected}: ItemProps) {
+function Item({icon, title, selected, onClick}: ItemProps) {
 	const colorScheme = useColorScheme() ?? 'light';
 
 	// cloneElement를 사용하여 icon의 fill을 변경
@@ -21,7 +22,7 @@ function Item({icon, title, selected}: ItemProps) {
 	});
 
 	return (
-		<TouchableOpacity style={styles.itemContainer}>
+		<TouchableOpacity style={styles.itemContainer} onPress={onClick} activeOpacity={0.7}>
 			{modifiedIcon}
 			<Text size={TextSize.BodySmall} color={selected ? 'brand.blue50' : 'grayScale.primary30'}>
 				{title}
@@ -31,8 +32,12 @@ function Item({icon, title, selected}: ItemProps) {
 }
 
 export default function NavBar({ children }: { children: ReactNode }) {
+	const colorScheme = useColorScheme() ?? 'light';
 	return (
-		<View style={styles.container}>
+		<View style={{
+			...styles.container,
+			borderColor: Colors[colorScheme]['grayScale.primary20'],
+		}}>
 			{children}
 		</View>
 	)
@@ -51,9 +56,12 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-around',
 
+		borderTopStartRadius: 12,
+		borderTopEndRadius: 12,
+
 		paddingHorizontal: 16,
 		paddingTop: 16,
-		paddingBottom: 36, // Ios Indicator 높이만큼 14px 추가
+		paddingBottom: Platform.OS === 'ios' ? 36 : 24, // iOS는 36px, Android는 24px
 	},
 	itemContainer: {
 		width: 'auto',

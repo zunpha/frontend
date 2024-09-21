@@ -1,7 +1,5 @@
-import {Image, ImageSourcePropType, SafeAreaView, StyleSheet, useColorScheme} from "react-native";
-import {Slot, usePathname} from "expo-router";
-import Text from "@/components/Text";
-import {TextSize} from "@/enums/TextSize";
+import {Image, ImageSourcePropType, Platform, SafeAreaView, StyleSheet, useColorScheme} from "react-native";
+import {Slot, usePathname, useRouter} from "expo-router";
 import HeaderTitleHome from '@/assets/images/service/header_title_home.png';
 import HeaderTitleAuction from '@/assets/images/service/header_title_auction.png';
 import HeaderTitleChatting from '@/assets/images/service/header_title_chatting.png';
@@ -18,9 +16,6 @@ import ChatIcon from "@/components/icons/ChatIcon";
 import ProfileIcon from "@/components/icons/ProfileIcon";
 
 function TitleNameImage(title: string): { image: ImageSourcePropType, width: number, height: number } {
-	// Pathname으로 title을 가져올때 Home(index.tsx 라우팅)은 빈 문자열로 오는것을 방지 ('/' -> 'home')
-	if (title === '') title = 'home';
-
 	switch (title) {
 		case 'home':
 			return {image: HeaderTitleHome, width: 24, height: 26};
@@ -38,6 +33,7 @@ function TitleNameImage(title: string): { image: ImageSourcePropType, width: num
 export default function MarketLayout() {
 	const pageName = usePathname().replaceAll('/', '');
 	const colorScheme = useColorScheme() ?? 'light';
+	const router = useRouter();
 
 	return (
 		<SafeAreaView style={{
@@ -56,33 +52,34 @@ export default function MarketLayout() {
 					<NotificationIcon fill={Colors[colorScheme]['grayScale.primary80']} size={26}/>
 				</View>
 			</View>
-			<Text size={TextSize.BodySmall} color={'brand.blue60'}>asd</Text>
 			<Slot/>
 			<NavBar>
 				<NavBar.Item
 					icon={<HomeIcon size={26}/>}
 					title={'홈'}
-					selected={pageName === ''}
+					selected={pageName.includes('home')}
+					onClick={() => router.push('/(market)/home/post')}
 				/>
 				<NavBar.Item
 					icon={<AuctionIcon size={26}/>}
 					title={'경매'}
-					selected={pageName === 'auction'}
+					selected={pageName.includes('auction')}
+					onClick={() => router.push('/(market)/auction')}
 				/>
 				<NavBar.Item
 					icon={<AddIcon size={26}/>}
 					title={'물건 팔기'}
-					selected={pageName === 'sell'}
+					selected={pageName.includes('sell')}
 				/>
 				<NavBar.Item
 					icon={<ChatIcon size={26}/>}
 					title={'채팅'}
-					selected={pageName === 'chatting'}
+					selected={pageName.includes('chatting')}
 				/>
 				<NavBar.Item
 					icon={<ProfileIcon size={26}/>}
 					title={'프로필'}
-					selected={pageName === 'profile'}
+					selected={pageName.includes('profile')}
 				/>
 			</NavBar>
 		</SafeAreaView>
@@ -100,6 +97,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 
 		paddingHorizontal: 16,
+
+		marginTop: Platform.OS === 'android' ? 45 : 0,
 	},
 	headerIcons: {
 		display: 'flex',
