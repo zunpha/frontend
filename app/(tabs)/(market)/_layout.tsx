@@ -10,22 +10,28 @@ import View from "@/components/views/View";
 import SearchIcon from "@/components/icons/SearchIcon";
 import {Colors} from "@/constants/Colors";
 import NotificationIcon from "@/components/icons/NotificationIcon";
+import NavBar from "@/components/NavBar";
+import HomeIcon from "@/components/icons/HomeIcon";
+import AuctionIcon from "@/components/icons/AuctionIcon";
+import AddIcon from "@/components/icons/AddIcon";
+import ChatIcon from "@/components/icons/ChatIcon";
+import ProfileIcon from "@/components/icons/ProfileIcon";
 
 function TitleNameImage(title: string): { image: ImageSourcePropType, width: number, height: number } {
-	// Pathname으로 title을 가져올때 Home은 빈 문자열로 오는것을 방지 ('/' -> 'home')
-	if(title === '') title = 'home';
+	// Pathname으로 title을 가져올때 Home(index.tsx 라우팅)은 빈 문자열로 오는것을 방지 ('/' -> 'home')
+	if (title === '') title = 'home';
 
 	switch (title) {
 		case 'home':
-			return { image: HeaderTitleHome, width: 24, height: 26 };
+			return {image: HeaderTitleHome, width: 24, height: 26};
 		case 'auction':
-			return { image: HeaderTitleAuction, width: 46, height: 24 };
+			return {image: HeaderTitleAuction, width: 46, height: 24};
 		case 'chatting':
-			return { image: HeaderTitleChatting, width: 48, height: 26 };
+			return {image: HeaderTitleChatting, width: 48, height: 26};
 		case 'profile':
-			return { image: HeaderTitleProfile, width: 69, height: 26 };
+			return {image: HeaderTitleProfile, width: 69, height: 26};
 		default:
-			return { image: HeaderTitleHome, width: 24, height: 26 };
+			return {image: HeaderTitleHome, width: 24, height: 26};
 	}
 }
 
@@ -43,15 +49,42 @@ export default function MarketLayout() {
 						width: TitleNameImage(pageName).width,
 						height: TitleNameImage(pageName).height,
 					}}
-			        source={TitleNameImage(pageName).image}
+					source={TitleNameImage(pageName).image}
 				/>
 				<View style={styles.headerIcons}>
-					<SearchIcon fill={Colors[colorScheme]['grayScale.primary80']} size={26} />
-					<NotificationIcon fill={Colors[colorScheme]['grayScale.primary80']} size={26} />
+					<SearchIcon fill={Colors[colorScheme]['grayScale.primary80']} size={26}/>
+					<NotificationIcon fill={Colors[colorScheme]['grayScale.primary80']} size={26}/>
 				</View>
 			</View>
 			<Text size={TextSize.BodySmall} color={'brand.blue60'}>asd</Text>
-			<Slot />
+			<Slot/>
+			<NavBar>
+				<NavBar.Item
+					icon={<HomeIcon size={26}/>}
+					title={'홈'}
+					selected={false}
+				/>
+				<NavBar.Item
+					icon={<AuctionIcon size={26}/>}
+					title={'경매'}
+					selected={false}
+				/>
+				<NavBar.Item
+					icon={<AddIcon size={26}/>}
+					title={'물건 팔기'}
+					selected={false}
+				/>
+				<NavBar.Item
+					icon={<ChatIcon size={26}/>}
+					title={'채팅'}
+					selected={false}
+				/>
+				<NavBar.Item
+					icon={<ProfileIcon size={26}/>}
+					title={'프로필'}
+					selected={true}
+				/>
+			</NavBar>
 		</SafeAreaView>
 	)
 }
