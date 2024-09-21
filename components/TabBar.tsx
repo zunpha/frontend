@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
 		display: 'flex',
 		flexDirection: 'row',
-		gap: 12,
+		gap: 14,
 
 		borderBottomWidth: 1,
 
