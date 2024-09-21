@@ -32,8 +32,12 @@ function Item({icon, title, selected, onClick}: ItemProps) {
 }
 
 export default function NavBar({ children }: { children: ReactNode }) {
+	const colorScheme = useColorScheme() ?? 'light';
 	return (
-		<View style={styles.container}>
+		<View style={{
+			...styles.container,
+			borderColor: Colors[colorScheme]['grayScale.primary20'],
+		}}>
 			{children}
 		</View>
 	)
@@ -51,6 +55,11 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'space-around',
+
+		borderTopStartRadius: 12,
+		borderTopEndRadius: 12,
+
+		borderWidth: 1,
 
 		paddingHorizontal: 16,
 		paddingTop: 16,
