@@ -10,9 +10,10 @@ interface ItemProps {
 	icon: ReactElement;
 	title: string;
 	selected: boolean;
+	onClick?: () => void;
 }
 
-function Item({icon, title, selected}: ItemProps) {
+function Item({icon, title, selected, onClick}: ItemProps) {
 	const colorScheme = useColorScheme() ?? 'light';
 
 	// cloneElement를 사용하여 icon의 fill을 변경
@@ -21,7 +22,7 @@ function Item({icon, title, selected}: ItemProps) {
 	});
 
 	return (
-		<TouchableOpacity style={styles.itemContainer}>
+		<TouchableOpacity style={styles.itemContainer} onPress={onClick}>
 			{modifiedIcon}
 			<Text size={TextSize.BodySmall} color={selected ? 'brand.blue50' : 'grayScale.primary30'}>
 				{title}
