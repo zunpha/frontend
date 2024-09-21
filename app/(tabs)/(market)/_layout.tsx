@@ -1,7 +1,5 @@
 import {Image, ImageSourcePropType, SafeAreaView, StyleSheet, useColorScheme} from "react-native";
 import {Slot, usePathname, useRouter} from "expo-router";
-import Text from "@/components/Text";
-import {TextSize} from "@/enums/TextSize";
 import HeaderTitleHome from '@/assets/images/service/header_title_home.png';
 import HeaderTitleAuction from '@/assets/images/service/header_title_auction.png';
 import HeaderTitleChatting from '@/assets/images/service/header_title_chatting.png';
@@ -54,7 +52,6 @@ export default function MarketLayout() {
 					<NotificationIcon fill={Colors[colorScheme]['grayScale.primary80']} size={26}/>
 				</View>
 			</View>
-			<Text size={TextSize.BodySmall} color={'brand.blue60'}>asd</Text>
 			<Slot/>
 			<NavBar>
 				<NavBar.Item
