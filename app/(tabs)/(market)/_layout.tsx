@@ -1,4 +1,4 @@
-import {Image, ImageSourcePropType, SafeAreaView, StyleSheet, useColorScheme} from "react-native";
+import {Image, ImageSourcePropType, Platform, SafeAreaView, StyleSheet, useColorScheme} from "react-native";
 import {Slot, usePathname, useRouter} from "expo-router";
 import HeaderTitleHome from '@/assets/images/service/header_title_home.png';
 import HeaderTitleAuction from '@/assets/images/service/header_title_auction.png';
@@ -58,7 +58,7 @@ export default function MarketLayout() {
 					icon={<HomeIcon size={26}/>}
 					title={'홈'}
 					selected={pageName.includes('home')}
-					onClick={() => router.push('/(market)/home')}
+					onClick={() => router.push('/(market)/home/post')}
 				/>
 				<NavBar.Item
 					icon={<AuctionIcon size={26}/>}
@@ -97,6 +97,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 
 		paddingHorizontal: 16,
+
+		marginTop: Platform.OS === 'android' ? 45 : 0,
 	},
 	headerIcons: {
 		display: 'flex',
