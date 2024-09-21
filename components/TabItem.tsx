@@ -25,7 +25,7 @@ export function TabItem({path, isActive, label}: TabItemProps) {
 		>
 			<Text
 				size={TextSize.HeadingSmall}
-				color={isActive ? 'grayScale.primary100' : 'grayScale.primary50'}
+				color={isActive ? 'grayScale.primary100' : 'grayScale.primary40'}
 				style={{marginTop: isActive ? 2 : 0}}
 			>
 				{label}

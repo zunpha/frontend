@@ -10,7 +10,7 @@ export function TabBar({children}: TabBarProps) {
 	const colorScheme = useColorScheme() ?? 'light';
 
 	return (
-		<View style={[styles.tabBar, {borderBottomColor: Colors[colorScheme]['grayScale.primary30']}]}>
+		<View style={[styles.tabBar, {borderBottomColor: Colors[colorScheme]['grayScale.primary10']}]}>
 			{children}
 		</View>
 	);
@@ -18,7 +18,7 @@ export function TabBar({children}: TabBarProps) {
 
 const styles = StyleSheet.create({
 	tabBar: {
-		height: 48,
+		height: 52,
 
 		display: 'flex',
 		flexDirection: 'row',
