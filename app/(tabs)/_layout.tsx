@@ -4,7 +4,7 @@ import { Stack } from 'expo-router';
 export default function TabLayout() {
 	return (
 		<Stack
-			initialRouteName="(market)"
+			initialRouteName="index"
 			screenOptions={ {
 				headerShown: false,
 			} }
@@ -20,7 +20,7 @@ export default function TabLayout() {
 			/>
 			<Stack.Screen
 				name="(onboard)"
-				options={{
+				options={ {
 					title: 'Onboard',
 				} }
 			/>

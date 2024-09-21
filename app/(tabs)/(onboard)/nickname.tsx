@@ -6,6 +6,7 @@ import { useColorScheme } from '@/components/useColorScheme';
 import Textfield from '@/components/Textfield';
 import Button from '@/components/Button';
 import useOnboardStore from '@/stores/onboardStore';
+import { router } from 'expo-router';
 
 export default function NicknameScreen() {
 	const {
@@ -39,7 +40,9 @@ export default function NicknameScreen() {
 				</View>
 			</View>
 			<View style={ styles.nextButton }>
-				<Button height={ 56 } disabled={ nickname.length === 0 }>다음</Button>
+				<Button height={ 56 } disabled={ nickname.length === 0 } onPress={ () => {
+					router.push('/(onboard)/agreement');
+				} }>다음</Button>
 			</View>
 		</Pressable>
 	);

@@ -5,15 +5,15 @@ import { Colors } from '@/constants/Colors';
 
 interface ViewProps {
 	backgroundColor?: keyof typeof Colors.light & keyof typeof Colors.dark;
-	children: ReactNode;
+	children?: ReactNode;
 	style?: ViewStyle;
 	isSafeArea?: boolean;
 }
 
-const StyledView: FC<ViewProps> = ({ backgroundColor, children, style }) => {
-	const colorScheme = useColorScheme();
+const StyledView: FC<ViewProps> = ({ backgroundColor = 'grayScale.primary5', children, style }) => {
+	const colorScheme = useColorScheme() ?? 'light';
 	const viewStyle: ViewStyle = {
-		backgroundColor: (backgroundColor && colorScheme) ? Colors[colorScheme]['grayScale.primary5'] : undefined,
+		backgroundColor: Colors[colorScheme][backgroundColor],
 		...style,
 	};
 
