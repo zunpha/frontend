@@ -59,8 +59,6 @@ const styles = StyleSheet.create({
 		borderTopStartRadius: 12,
 		borderTopEndRadius: 12,
 
-		borderWidth: 1,
-
 		paddingHorizontal: 16,
 		paddingTop: 16,
 		paddingBottom: Platform.OS === 'ios' ? 36 : 24, // iOS는 36px, Android는 24px
