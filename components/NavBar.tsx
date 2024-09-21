@@ -1,5 +1,5 @@
 import View from "@/components/views/View";
-import {StyleSheet, TouchableOpacity, useColorScheme} from "react-native";
+import {Platform, StyleSheet, TouchableOpacity, useColorScheme} from "react-native";
 import Text from "@/components/Text";
 import {TextSize} from "@/enums/TextSize";
 import {cloneElement, ReactElement, ReactNode} from "react";
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
 
 		paddingHorizontal: 16,
 		paddingTop: 16,
-		paddingBottom: 36, // Ios Indicator 높이만큼 14px 추가
+		paddingBottom: Platform.OS === 'ios' ? 36 : 24, // iOS는 36px, Android는 24px
 	},
 	itemContainer: {
 		width: 'auto',
