@@ -62,27 +62,27 @@ export default function MarketLayout() {
 				<NavBar.Item
 					icon={<HomeIcon size={26}/>}
 					title={'홈'}
-					selected={false}
+					selected={pageName === ''}
 				/>
 				<NavBar.Item
 					icon={<AuctionIcon size={26}/>}
 					title={'경매'}
-					selected={false}
+					selected={pageName === 'auction'}
 				/>
 				<NavBar.Item
 					icon={<AddIcon size={26}/>}
 					title={'물건 팔기'}
-					selected={false}
+					selected={pageName === 'sell'}
 				/>
 				<NavBar.Item
 					icon={<ChatIcon size={26}/>}
 					title={'채팅'}
-					selected={false}
+					selected={pageName === 'chatting'}
 				/>
 				<NavBar.Item
 					icon={<ProfileIcon size={26}/>}
 					title={'프로필'}
-					selected={true}
+					selected={pageName === 'profile'}
 				/>
 			</NavBar>
 		</SafeAreaView>
