@@ -22,7 +22,7 @@ export default function LayoutMarketHome() {
 					<TabItem
 						path="/(market)/home/price"
 						isActive={segments.includes('price')}
-						label="시세 확인"
+						label="시세확인"
 						icon={<QueryStatsIcon size={18} />}
 					/>
 					<TabItem
