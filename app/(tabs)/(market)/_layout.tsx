@@ -1,5 +1,5 @@
 import {Image, ImageSourcePropType, SafeAreaView, StyleSheet, useColorScheme} from "react-native";
-import {Slot} from "expo-router";
+import {Slot, usePathname} from "expo-router";
 import Text from "@/components/Text";
 import {TextSize} from "@/enums/TextSize";
 import HeaderTitleHome from '@/assets/images/service/header_title_home.png';
@@ -12,6 +12,9 @@ import {Colors} from "@/constants/Colors";
 import NotificationIcon from "@/components/icons/NotificationIcon";
 
 function TitleNameImage(title: string): { image: ImageSourcePropType, width: number, height: number } {
+	// Pathname으로 title을 가져올때 Home은 빈 문자열로 오는것을 방지 ('/' -> 'home')
+	if(title === '') title = 'home';
+
 	switch (title) {
 		case 'home':
 			return { image: HeaderTitleHome, width: 24, height: 26 };
@@ -27,7 +30,7 @@ function TitleNameImage(title: string): { image: ImageSourcePropType, width: num
 }
 
 export default function MarketLayout() {
-	const page = 'profile';
+	const pageName = usePathname().replaceAll('/', '');
 	const colorScheme = useColorScheme() ?? 'light';
 
 	return (
@@ -37,10 +40,10 @@ export default function MarketLayout() {
 			<View style={styles.header}>
 				<Image
 					style={{
-						width: TitleNameImage(page).width,
-						height: TitleNameImage(page).height,
+						width: TitleNameImage(pageName).width,
+						height: TitleNameImage(pageName).height,
 					}}
-			        source={TitleNameImage(page).image}
+			        source={TitleNameImage(pageName).image}
 				/>
 				<View style={styles.headerIcons}>
 					<SearchIcon fill={Colors[colorScheme]['grayScale.primary80']} size={26} />
