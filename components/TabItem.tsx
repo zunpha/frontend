@@ -1,4 +1,4 @@
-import React, {cloneElement, ReactElement} from 'react';
+import React from 'react';
 import {StyleSheet, TouchableOpacity, useColorScheme} from 'react-native';
 import {Href, useRouter} from 'expo-router';
 import Text from '@/components/Text';
@@ -9,16 +9,11 @@ interface TabItemProps {
 	path: Href<string | object>;
 	isActive: boolean;
 	label: string;
-	icon: ReactElement;
 }
 
-export function TabItem({path, isActive, label, icon}: TabItemProps) {
+export function TabItem({path, isActive, label}: TabItemProps) {
 	const router = useRouter();
 	const colorScheme = useColorScheme() ?? 'light';
-
-	const modifiedIcon = cloneElement(icon, {
-		fill: isActive ? Colors[colorScheme]['grayScale.primary100'] : Colors[colorScheme]['grayScale.primary40'],
-	})
 
 	const handlePress = () => {
 		router.push(path);
@@ -37,7 +32,6 @@ export function TabItem({path, isActive, label, icon}: TabItemProps) {
 			>
 				{label}
 			</Text>
-			{modifiedIcon}
 		</TouchableOpacity>
 	);
 }
