@@ -4,7 +4,7 @@ import { Stack } from 'expo-router';
 export default function TabLayout() {
 	return (
 		<Stack
-			initialRouteName="(market)"
+			initialRouteName="(market)/auction"
 			screenOptions={ {
 				headerShown: false,
 			} }

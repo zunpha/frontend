@@ -57,7 +57,7 @@ export default function MarketLayout() {
 				<NavBar.Item
 					icon={<HomeIcon size={26}/>}
 					title={'홈'}
-					selected={pageName === ''}
+					selected={pageName === 'home'}
 					onClick={() => router.push('/(market)/home')}
 				/>
 				<NavBar.Item
