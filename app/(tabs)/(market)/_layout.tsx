@@ -1,5 +1,5 @@
 import {Image, ImageSourcePropType, SafeAreaView, StyleSheet, useColorScheme} from "react-native";
-import {Slot, usePathname} from "expo-router";
+import {Slot, usePathname, useRouter} from "expo-router";
 import Text from "@/components/Text";
 import {TextSize} from "@/enums/TextSize";
 import HeaderTitleHome from '@/assets/images/service/header_title_home.png';
@@ -18,9 +18,6 @@ import ChatIcon from "@/components/icons/ChatIcon";
 import ProfileIcon from "@/components/icons/ProfileIcon";
 
 function TitleNameImage(title: string): { image: ImageSourcePropType, width: number, height: number } {
-	// Pathname으로 title을 가져올때 Home(index.tsx 라우팅)은 빈 문자열로 오는것을 방지 ('/' -> 'home')
-	if (title === '') title = 'home';
-
 	switch (title) {
 		case 'home':
 			return {image: HeaderTitleHome, width: 24, height: 26};
@@ -38,6 +35,7 @@ function TitleNameImage(title: string): { image: ImageSourcePropType, width: num
 export default function MarketLayout() {
 	const pageName = usePathname().replaceAll('/', '');
 	const colorScheme = useColorScheme() ?? 'light';
+	const router = useRouter();
 
 	return (
 		<SafeAreaView style={{
@@ -63,11 +61,13 @@ export default function MarketLayout() {
 					icon={<HomeIcon size={26}/>}
 					title={'홈'}
 					selected={pageName === ''}
+					onClick={() => router.push('/(market)/home')}
 				/>
 				<NavBar.Item
 					icon={<AuctionIcon size={26}/>}
 					title={'경매'}
 					selected={pageName === 'auction'}
+					onClick={() => router.push('/(market)/auction')}
 				/>
 				<NavBar.Item
 					icon={<AddIcon size={26}/>}
