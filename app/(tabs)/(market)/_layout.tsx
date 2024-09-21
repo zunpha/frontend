@@ -57,29 +57,29 @@ export default function MarketLayout() {
 				<NavBar.Item
 					icon={<HomeIcon size={26}/>}
 					title={'홈'}
-					selected={pageName === 'home'}
+					selected={pageName.includes('home')}
 					onClick={() => router.push('/(market)/home')}
 				/>
 				<NavBar.Item
 					icon={<AuctionIcon size={26}/>}
 					title={'경매'}
-					selected={pageName === 'auction'}
+					selected={pageName.includes('auction')}
 					onClick={() => router.push('/(market)/auction')}
 				/>
 				<NavBar.Item
 					icon={<AddIcon size={26}/>}
 					title={'물건 팔기'}
-					selected={pageName === 'sell'}
+					selected={pageName.includes('sell')}
 				/>
 				<NavBar.Item
 					icon={<ChatIcon size={26}/>}
 					title={'채팅'}
-					selected={pageName === 'chatting'}
+					selected={pageName.includes('chatting')}
 				/>
 				<NavBar.Item
 					icon={<ProfileIcon size={26}/>}
 					title={'프로필'}
-					selected={pageName === 'profile'}
+					selected={pageName.includes('profile')}
 				/>
 			</NavBar>
 		</SafeAreaView>
