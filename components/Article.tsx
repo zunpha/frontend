@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
 		gap: 12,
 	},
 	articleImage: {
-		width: 115,
-		height: 115,
+		width: 120,
+		height: 120,
 
 		borderRadius: 8,
 	},
