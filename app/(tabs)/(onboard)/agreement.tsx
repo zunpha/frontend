@@ -35,7 +35,7 @@ export default function AgreementScreen() {
 							약관 전체 동의
 						</Text>
 					</View>
-					<View style={ styles.line } backgroundColor={ 'grayScale.primary40' } />
+					<View style={ styles.line } backgroundColor={ 'grayScale.primary20' } />
 					<View style={ styles.checkboxList }>
 						{
 							agreements.map((agreement, index) => (
