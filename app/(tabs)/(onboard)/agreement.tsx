@@ -1,8 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {TextSize} from '@/enums/TextSize';
-import { View } from '@/components/ui/atoms'
+import {Checkbox, View} from '@/components/ui/atoms'
 import {Button, StyledText} from '@/components/ui/atoms';
-import Checkbox from '@/components/Checkbox';
 import useAgreementStore from '@/stores/agreementStore';
 import {router} from 'expo-router';
 
