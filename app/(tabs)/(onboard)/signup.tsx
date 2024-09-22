@@ -1,8 +1,7 @@
 import {Keyboard, Pressable, StyleSheet, useColorScheme} from 'react-native';
 import { TextSize } from '@/enums/TextSize';
-import { View } from '@/components/ui/atoms'
+import {Textfield, View} from '@/components/ui/atoms'
 import {Button, StyledText} from '@/components/ui/atoms';
-import Textfield from '@/components/Textfield';
 import { useEffect, useState } from 'react';
 import { RegexList } from '@/constants/RegexList';
 import { AnimatePresence, MotiText, MotiView } from 'moti';

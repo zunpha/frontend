@@ -1,7 +1,6 @@
 import {Keyboard, Pressable, StyleSheet} from 'react-native';
 import { TextSize } from '@/enums/TextSize';
-import { View } from '@/components/ui/atoms'
-import Textfield from '@/components/Textfield';
+import {Textfield, View} from '@/components/ui/atoms'
 import {Button, StyledText} from '@/components/ui/atoms';
 import useOnboardStore from '@/stores/onboardStore';
 import { router } from 'expo-router';
