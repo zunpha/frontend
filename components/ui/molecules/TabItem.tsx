@@ -11,7 +11,7 @@ interface TabItemProps {
 	label: string;
 }
 
-export function TabItem({path, isActive, label}: TabItemProps) {
+export default function TabItem({path, isActive, label}: TabItemProps) {
 	const router = useRouter();
 	const colorScheme = useColorScheme() ?? 'light';
 

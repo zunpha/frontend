@@ -6,7 +6,7 @@ interface TabBarProps {
 	children: React.ReactNode;
 }
 
-export function TabBar({children}: TabBarProps) {
+export default function TabBar({children}: TabBarProps) {
 	const colorScheme = useColorScheme() ?? 'light';
 
 	return (

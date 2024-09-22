@@ -1,7 +1,6 @@
 import {Slot, useSegments} from "expo-router";
-import {TabBar} from "@/components/TabBar";
-import {TabItem} from "@/components/TabItem";
 import {SafeAreaView} from "react-native";
+import {TabBar, TabItem} from "@/components/ui/molecules";
 export default function LayoutMarketHome() {
 	const segments: string[] = useSegments();
 
