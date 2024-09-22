@@ -1,7 +1,6 @@
-import { Pressable, StyleSheet } from 'react-native';
+import {Pressable, StyleSheet, useColorScheme} from 'react-native';
 import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
-import { useColorScheme } from '@/components/useColorScheme';
 import { Colors } from '@/constants/Colors';
 import { MotiView } from 'moti';
 

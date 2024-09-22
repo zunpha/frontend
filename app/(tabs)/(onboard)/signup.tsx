@@ -1,4 +1,4 @@
-import { Keyboard, Pressable, StyleSheet } from 'react-native';
+import {Keyboard, Pressable, StyleSheet, useColorScheme} from 'react-native';
 import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
 import View from '@/components/views/View';
@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 import { RegexList } from '@/constants/RegexList';
 import { AnimatePresence, MotiText, MotiView } from 'moti';
 import { getSizeStyle } from '@/utils/getTextSize';
-import { useColorScheme } from '@/components/useColorScheme';
 import { Colors } from '@/constants/Colors';
 import useToastStore from '@/stores/toastStore';
 import { router } from 'expo-router';
@@ -63,7 +62,7 @@ export default function SignUpScreen() {
 		}
 	};
 
-	const { addToast, toasts } = useToastStore((state) => state);
+	const { addToast } = useToastStore((state) => state);
 
 	return (
 		<Pressable style={ {

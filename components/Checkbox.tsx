@@ -1,8 +1,7 @@
 import React from 'react';
-import { Pressable, StyleSheet } from 'react-native';
+import {Pressable, StyleSheet, useColorScheme} from 'react-native';
 import { MotiView } from 'moti';
 import CheckIcon from '@/components/icons/CheckIcon';
-import { useColorScheme } from '@/components/useColorScheme';
 import { Colors } from '@/constants/Colors';
 import { Easing } from 'react-native-reanimated';
 

@@ -1,8 +1,7 @@
 import ErrorIcon from '@/components/icons/ErrorIcon';
 import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
-import { StyleSheet, StyleSheetProperties } from 'react-native';
-import { useColorScheme } from '@/components/useColorScheme';
+import {StyleSheet, StyleSheetProperties, useColorScheme} from 'react-native';
 import { AnimatePresence, MotiView } from 'moti';
 import { useEffect, useState } from 'react';
 
