@@ -1,4 +1,4 @@
-import { Image, SafeAreaView, StyleSheet } from 'react-native';
+import { Image, Pressable, SafeAreaView, StyleSheet } from 'react-native';
 import View from '@/components/views/View';
 import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
@@ -34,7 +34,11 @@ export default function TabOneScreen() {
 				} }>전파 시작하기</Button>
 				<View style={ styles.reLoginContainer }>
 					<Text size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>이미 계정이 있나요?</Text>
-					<Text size={ TextSize.BodyLarge } color={ 'brand.blue50' }>로그인</Text>
+					<Pressable onPress={ () => {
+						router.push('/(onboard)/login');
+					} }>
+						<Text size={ TextSize.BodyLarge } color={ 'brand.blue50' }>로그인</Text>
+					</Pressable>
 				</View>
 			</View>
 		</SafeAreaView>

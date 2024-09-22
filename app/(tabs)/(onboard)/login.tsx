@@ -4,7 +4,7 @@ import { TextSize } from '@/enums/TextSize';
 import View from '@/components/views/View';
 import Button from '@/components/Button';
 import Textfield from '@/components/Textfield';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RegexList } from '@/constants/RegexList';
 import { AnimatePresence, MotiText, MotiView } from 'moti';
 import { getSizeStyle } from '@/utils/getTextSize';
@@ -12,16 +12,16 @@ import { useColorScheme } from '@/components/useColorScheme';
 import { Colors } from '@/constants/Colors';
 import useToastStore from '@/stores/toastStore';
 import { router } from 'expo-router';
-import useOnboardStore from '@/stores/onboardStore';
+import LoginStore from '@/stores/loginStore';
 
-export default function SignUpScreen() {
+export default function LoginScreen() {
 	const {
 		phoneNumber, setPhoneNumber,
 		isSigningUp, setIsSigningUp,
 		verificationCode, setVerificationCode,
 		isLoaded, setIsLoaded,
 		isVerified, setIsVerified,
-	} = useOnboardStore((state) => state);
+	} = LoginStore((state) => state);
 	const [ isVerifyButtonDisabled, setIsVerifyButtonDisabled ] = useState(true);
 	const [ isStartButtonDisabled, setIsStartButtonDisabled ] = useState(true);
 	const [ hasStartedSigningUp, setHasStartedSigningUp ] = useState(false); // 추가된 상태
@@ -74,10 +74,10 @@ export default function SignUpScreen() {
 			<View style={ styles.container }>
 				<View style={ styles.title }>
 					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
-						어서오세요!
+						전파에 돌아오신 것을
 					</Text>
 					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
-						전파에 오신것을 환영해요!
+						환영해요!
 					</Text>
 				</View>
 				<View style={ styles.form }>

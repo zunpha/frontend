@@ -1,9 +1,9 @@
-import { Pressable, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
 import { useColorScheme } from '@/components/useColorScheme';
 import { Colors } from '@/constants/Colors';
-import { MotiView } from 'moti';
+import { MotiPressable } from 'moti/interactions';
 
 interface CategoryProps {
 	text: string;
@@ -17,29 +17,27 @@ export default function Category({
 	const colorScheme = useColorScheme() ?? 'light';
 
 	return (
-		<Pressable onPress={ () => {
-			setChecked(!checked);
-		} }>
-			<MotiView
-				style={ {
-					...styles.container,
-					backgroundColor: checked ? Colors[colorScheme]['brand.blue10'] : Colors[colorScheme]['grayScale.primary10'],
-				} }
-				animate={ {
-					backgroundColor: checked ? Colors[colorScheme]['brand.blue10'] : Colors[colorScheme]['grayScale.primary10'],
-				} }
-				transition={ {
-					type: 'timing',
-					duration: 200,  // 약간 더 긴 지속 시간으로 자연스러움 증가
-					// easing: Easing.inOut(Easing.ease),  // 부드러운 전환을 위한 easing 함수
-				} }
-			>
-				<Text size={ TextSize.BodyLarge }
-				      color={ checked ? 'brand.blue50' : 'grayScale.primary60' }>
-					{ text }
-				</Text>
-			</MotiView>
-		</Pressable>
+		<MotiPressable
+			onPress={ () => setChecked(!checked) }
+			animate={ {
+				backgroundColor: checked ? Colors[colorScheme]['brand.blue60'] : Colors[colorScheme]['grayScale.primary10'],
+			} }
+			style={ {
+				...styles.container,
+				backgroundColor: checked ? Colors[colorScheme]['brand.blue60'] : Colors[colorScheme]['grayScale.primary10'],
+			} }
+			transition={ {
+				type: 'spring',
+				damping: 20,
+				stiffness: 100,
+				// duration: 200,
+			} }
+		>
+			<Text size={ TextSize.BodyLarge }
+			      color={ checked ? 'white' : 'grayScale.primary60' }>
+				{ text }
+			</Text>
+		</MotiPressable>
 	);
 }
 
