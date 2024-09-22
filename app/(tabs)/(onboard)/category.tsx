@@ -2,7 +2,7 @@ import { Keyboard, Pressable, StyleSheet } from 'react-native';
 import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
 import View from '@/components/View';
-import Button from '@/components/Button';
+import Button from '@/components/ui/atoms/Button';
 import { router } from 'expo-router';
 import Category from '@/components/Category';
 import useCategoryStore from '@/stores/categoryStore';

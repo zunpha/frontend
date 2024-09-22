@@ -2,7 +2,7 @@ import { Image, SafeAreaView, StyleSheet } from 'react-native';
 import View from '@/components/View';
 import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
-import Button from '@/components/Button';
+import Button from '@/components/ui/atoms/Button';
 import Svg, { Path } from 'react-native-svg';
 import Onboard_Title from '@/assets/images/onboard_image.png';
 import { router } from 'expo-router';

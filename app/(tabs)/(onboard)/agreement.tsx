@@ -1,11 +1,11 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 import Text from '@/components/Text';
-import { TextSize } from '@/enums/TextSize';
+import {TextSize} from '@/enums/TextSize';
 import View from '@/components/View';
-import Button from '@/components/Button';
+import Button from '@/components/ui/atoms/Button';
 import Checkbox from '@/components/Checkbox';
 import useAgreementStore from '@/stores/agreementStore';
-import { router } from 'expo-router';
+import {router} from 'expo-router';
 
 export default function AgreementScreen() {
 	const {
