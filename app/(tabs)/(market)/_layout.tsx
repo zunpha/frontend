@@ -8,12 +8,12 @@ import { View } from '@/components/ui/atoms'
 import SearchIcon from "@/components/icons/SearchIcon";
 import {Colors} from "@/constants/Colors";
 import NotificationIcon from "@/components/icons/NotificationIcon";
-import NavBar from "@/components/NavBar";
 import HomeIcon from "@/components/icons/HomeIcon";
 import AuctionIcon from "@/components/icons/AuctionIcon";
 import AddIcon from "@/components/icons/AddIcon";
 import ChatIcon from "@/components/icons/ChatIcon";
 import ProfileIcon from "@/components/icons/ProfileIcon";
+import {NavBar} from "@/components/ui/molecules";
 
 function TitleNameImage(title: string): { image: ImageSourcePropType, width: number, height: number } {
 	switch (title) {
