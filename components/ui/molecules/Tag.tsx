@@ -10,7 +10,7 @@ interface CategoryProps {
 	setChecked: (value: boolean) => void;
 }
 
-export default function Category({
+export default function Tag({
 	                                 text, checked, setChecked,
                                  }: CategoryProps) {
 	const colorScheme = useColorScheme() ?? 'light';

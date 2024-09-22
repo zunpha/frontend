@@ -3,8 +3,8 @@ import { TextSize } from '@/enums/TextSize';
 import { View } from '@/components/ui/atoms'
 import {Button, StyledText} from '@/components/ui/atoms';
 import { router } from 'expo-router';
-import Category from '@/components/Category';
 import useCategoryStore from '@/stores/categoryStore';
+import {Tag} from "@/components/ui/molecules";
 
 export default function NicknameScreen() {
 	const {
@@ -34,7 +34,7 @@ export default function NicknameScreen() {
 				<View style={ styles.form }>
 					{
 						categories.map((category, index) => (
-							<Category
+							<Tag
 								key={ index }
 								text={ category.name }
 								checked={ category.checked }
