@@ -1,4 +1,4 @@
-import View from "@/components/views/View";
+import View from "@/components/View";
 import {Platform, StyleSheet, TouchableOpacity, useColorScheme} from "react-native";
 import Text from "@/components/Text";
 import {TextSize} from "@/enums/TextSize";

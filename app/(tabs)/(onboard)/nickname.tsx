@@ -1,7 +1,7 @@
 import {Keyboard, Pressable, StyleSheet} from 'react-native';
 import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
-import View from '@/components/views/View';
+import View from '@/components/View';
 import Textfield from '@/components/Textfield';
 import Button from '@/components/Button';
 import useOnboardStore from '@/stores/onboardStore';
