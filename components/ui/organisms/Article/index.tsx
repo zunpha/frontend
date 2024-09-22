@@ -1,46 +1,12 @@
 import {Image, StyleSheet, TouchableOpacity, useColorScheme, View} from "react-native";
-import { StyledText } from "@/components/ui/atoms";
+import {StyledText} from "@/components/ui/atoms";
 import {TextSize} from "@/enums/TextSize";
 import DotMenuIcon from "@/components/icons/DotMenu";
 import {Colors} from "@/constants/Colors";
 import {ReactElement} from "react";
-import MarketChartIcon from "@/components/icons/MarketChartIcon";
-
-function MarketPriceSecondary({price}: { price: number }) {
-	const colorScheme = useColorScheme() ?? 'light';
-	return (
-		<>
-			<View style={styles.marketPriceSecondary}>
-				<MarketChartIcon size={16} fill={Colors[colorScheme]['grayScale.primary40']} />
-				<StyledText size={TextSize.BodySmall} color={'grayScale.primary40'}>
-					{price.toLocaleString()}
-				</StyledText>
-			</View>
-		</>
-	)
-}
-
-function LocationAndTime({location, time}: { location: string, time: string }) {
-	return (
-		<View style={styles.locationAndTimeContainer}>
-			<StyledText size={TextSize.LabelLarge} color={'grayScale.primary50'}>
-				{location}
-			</StyledText>
-			<StyledText size={TextSize.LabelLarge} color={'grayScale.primary50'}>|</StyledText>
-			<StyledText size={TextSize.LabelLarge} color={'grayScale.primary50'}>
-				{time}
-			</StyledText>
-		</View>
-	)
-}
-
-function PriceText({price}: { price: number }) {
-	return (
-		<StyledText size={TextSize.HeadingSmall} color={'grayScale.primary100'}>
-			{price.toLocaleString()}원
-		</StyledText>
-	)
-}
+import {PriceText} from "./PriceText";
+import {LocationAndTime} from "./LocationAndTime";
+import {MarketPriceSecondary} from "./MarketPriceSecondary";
 
 interface ArticleProps {
 	imageUrl: string;
@@ -122,19 +88,4 @@ const styles = StyleSheet.create({
 		marginTop: -5, // 아이콘이 텍스트와 수직 정렬되도록 함
 		marginRight: -13 // 아이콘이 오른쪽에 붙지 않도록 함
 	},
-
-	locationAndTimeContainer: {
-		display: 'flex',
-		flexDirection: 'row',
-		alignItems: 'center',
-		gap: 4,
-	},
-
-	marketPriceSecondary: {
-		display: 'flex',
-		flexDirection: 'row',
-		alignItems: 'center',
-
-		gap: 2,
-	}
 })

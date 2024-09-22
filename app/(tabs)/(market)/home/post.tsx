@@ -1,7 +1,7 @@
 import {ScrollView} from "react-native";
-import Article from "@/components/Article";
 import {TransactionTag, View} from '@/components/ui/atoms'
 import {TransactionType} from "@/types/transaction";
+import {Article} from "@/components/ui/organisms";
 
 export default function PageMarketHomePosts() {
 	return (
