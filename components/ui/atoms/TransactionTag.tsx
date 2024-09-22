@@ -3,7 +3,7 @@ import {StyleSheet, useColorScheme, View} from "react-native";
 import {TextSize} from "@/enums/TextSize";
 import {Colors} from "@/constants/Colors";
 import {IColorToken} from "@/types/color";
-import {StyledText} from "@/components/ui/atoms";
+import StyledText from "@/components/ui/atoms/Text";
 
 interface TransactionTagProps {
     type: TransactionType;
