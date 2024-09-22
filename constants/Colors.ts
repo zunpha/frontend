@@ -75,7 +75,7 @@ export const Colors: IColor = {
 		'brand.blue20': '#3525AE',
 		'brand.blue30': '#412AD8',
 		'brand.blue40': '#4C36F5',
-		'brand.blue50': '#5650FF',
+		'brand.blue50': '#5168FF',
 		'brand.blue60': '#757AFF',
 		'brand.blue70': '#9CA9FF',
 		'brand.blue80': '#C2CCFF',
