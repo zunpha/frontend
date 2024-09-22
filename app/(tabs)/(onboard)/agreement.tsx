@@ -5,6 +5,7 @@ import View from '@/components/views/View';
 import Button from '@/components/Button';
 import Checkbox from '@/components/Checkbox';
 import useAgreementStore from '@/stores/agreementStore';
+import { router } from 'expo-router';
 
 export default function AgreementScreen() {
 	const {
@@ -55,7 +56,9 @@ export default function AgreementScreen() {
 				</View>
 			</View>
 			<View style={ styles.nextButton }>
-				<Button height={ 56 } disabled={ !isOk() }>다음</Button>
+				<Button height={ 56 } disabled={ !isOk() } onPress={ () => {
+					router.push('/(onboard)/category');
+				} }>다음</Button>
 			</View>
 		</View>
 	);

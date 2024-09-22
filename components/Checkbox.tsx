@@ -4,6 +4,7 @@ import { MotiView } from 'moti';
 import CheckIcon from '@/components/icons/CheckIcon';
 import { useColorScheme } from '@/components/useColorScheme';
 import { Colors } from '@/constants/Colors';
+import { Easing } from 'react-native-reanimated';
 
 interface CheckboxProps {
 	checked: boolean;
@@ -18,22 +19,23 @@ export default function Checkbox({ checked, setChecked, type = 'default' }: Chec
 		<Pressable onPress={ () => setChecked(!checked) }>
 			<MotiView
 				from={ {
-					opacity: 0.5,
+					backgroundColor: checked ? 'transparent' : Colors[colorScheme]['brand.blue50'],
+					borderRadius: type === 'round' ? 12 : 4.8,
+					borderWidth: checked ? 0 : 2,
 				} }
 				animate={ {
-					opacity: checked ? 1 : 0.5,
+					backgroundColor: checked ? Colors[colorScheme]['brand.blue50'] : 'transparent',
+					borderRadius: type === 'round' ? 16 : 6,
+					borderWidth: checked ? 0 : 2,
 				} }
 				transition={ {
-					type: 'spring',
-					stiffness: 200,
-					damping: 15,
+					type: 'timing',
+					duration: 200,  // 애니메이션 지속 시간을 조정
+					easing: Easing.inOut(Easing.ease),  // 자연스러운 전환을 위한 easing 함수
 				} }
 				style={ {
 					...styles.container,
-					borderWidth: checked ? 0 : 2,
 					borderColor: Colors[colorScheme]['grayScale.primary50'],
-					backgroundColor: checked ? Colors[colorScheme]['brand.blue50'] : 'transparent',
-					borderRadius: type === 'round' ? 12 : 4.8,
 				} }
 			>
 				{ checked && <CheckIcon /> }
