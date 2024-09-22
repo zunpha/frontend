@@ -1,6 +1,9 @@
 import {ScrollView} from "react-native";
 import Article from "@/components/Article";
 import View from "@/components/views/View";
+import TransactionTag from "@/components/TransactionTag";
+import {TransactionType} from "@/types/transaction";
+
 export default function PageMarketHomePosts() {
 	return (
 		<>
@@ -18,6 +21,7 @@ export default function PageMarketHomePosts() {
 						<Article.LocationAndTime location={'강남구'} time={'1시간 전'} />
 					</View>
 					<Article.MarketPriceSecondary price={1_500_000} />
+					<TransactionTag type={TransactionType.Reserved} />
 				</Article>
 			</ScrollView>
 		</>
