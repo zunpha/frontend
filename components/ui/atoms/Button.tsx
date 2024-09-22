@@ -1,8 +1,8 @@
 import { TextStyle, TouchableOpacity, useColorScheme, ViewStyle } from 'react-native';
 import { Colors } from '@/constants/Colors';
 import { ReactNode } from 'react';
-import StyledText from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
+import StyledText from "@/components/ui/atoms/Text";
 
 interface ButtonProps {
 	height?: number;

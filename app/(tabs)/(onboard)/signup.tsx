@@ -1,8 +1,7 @@
 import {Keyboard, Pressable, StyleSheet, useColorScheme} from 'react-native';
-import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
 import View from '@/components/View';
-import Button from '@/components/ui/atoms/Button';
+import {Button, StyledText} from '@/components/ui/atoms';
 import Textfield from '@/components/Textfield';
 import { useEffect, useState } from 'react';
 import { RegexList } from '@/constants/RegexList';
@@ -72,12 +71,12 @@ export default function SignUpScreen() {
 		} } accessible={ true }>
 			<View style={ styles.container }>
 				<View style={ styles.title }>
-					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
+					<StyledText size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
 						어서오세요!
-					</Text>
-					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
+					</StyledText>
+					<StyledText size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
 						전파에 오신것을 환영해요!
-					</Text>
+					</StyledText>
 				</View>
 				<View style={ styles.form }>
 					<Textfield
@@ -117,8 +116,8 @@ export default function SignUpScreen() {
 					</AnimatePresence>
 					{ !isSigningUp && (
 						<View style={ styles.contactContainer }>
-							<Text size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</Text>
-							<Text size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</Text>
+							<StyledText size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</StyledText>
+							<StyledText size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</StyledText>
 						</View>
 					) }
 					{ isSigningUp && (
@@ -133,8 +132,8 @@ export default function SignUpScreen() {
 							transition={ { type: 'timing', duration: 300 } }
 						>
 							<View style={ styles.contactContainer }>
-								<Text size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</Text>
-								<Text size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</Text>
+								<StyledText size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</StyledText>
+								<StyledText size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</StyledText>
 							</View>
 						</MotiText>
 					) }

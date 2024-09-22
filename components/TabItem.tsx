@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, useColorScheme} from 'react-native';
 import {Href, useRouter} from 'expo-router';
-import Text from '@/components/Text';
 import {TextSize} from '@/enums/TextSize';
 import {Colors} from "@/constants/Colors";
+import {StyledText} from "@/components/ui/atoms";
 
 interface TabItemProps {
 	path: Href<string | object>;
@@ -25,13 +25,13 @@ export function TabItem({path, isActive, label}: TabItemProps) {
 			activeOpacity={1}
 			onPress={handlePress}
 		>
-			<Text
+			<StyledText
 				size={TextSize.HeadingSmall}
 				color={isActive ? 'grayScale.primary100' : 'grayScale.primary40'}
 				style={{marginTop: isActive ? 2 : 0}}
 			>
 				{label}
-			</Text>
+			</StyledText>
 		</TouchableOpacity>
 	);
 }

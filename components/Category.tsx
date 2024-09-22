@@ -1,8 +1,8 @@
 import {Pressable, StyleSheet, useColorScheme} from 'react-native';
-import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
 import { Colors } from '@/constants/Colors';
 import { MotiView } from 'moti';
+import {StyledText} from "@/components/ui/atoms";
 
 interface CategoryProps {
 	text: string;
@@ -33,10 +33,10 @@ export default function Category({
 					// easing: Easing.inOut(Easing.ease),  // 부드러운 전환을 위한 easing 함수
 				} }
 			>
-				<Text size={ TextSize.BodyLarge }
+				<StyledText size={ TextSize.BodyLarge }
 				      color={ checked ? 'brand.blue50' : 'grayScale.primary60' }>
 					{ text }
-				</Text>
+				</StyledText>
 			</MotiView>
 		</Pressable>
 	);

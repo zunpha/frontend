@@ -1,8 +1,7 @@
 import { Keyboard, Pressable, StyleSheet } from 'react-native';
-import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
 import View from '@/components/View';
-import Button from '@/components/ui/atoms/Button';
+import {Button, StyledText} from '@/components/ui/atoms';
 import { router } from 'expo-router';
 import Category from '@/components/Category';
 import useCategoryStore from '@/stores/categoryStore';
@@ -25,12 +24,12 @@ export default function NicknameScreen() {
 		} } accessible={ true }>
 			<View style={ styles.container }>
 				<View style={ styles.title }>
-					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
+					<StyledText size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
 						자주 찾는 전자기기 항목들을
-					</Text>
-					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
-						<Text size={ TextSize.HeadingLarge } color={ 'brand.blue60' }>3개 이상</Text> 선택해주세요.
-					</Text>
+					</StyledText>
+					<StyledText size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
+						<StyledText size={ TextSize.HeadingLarge } color={ 'brand.blue60' }>3개 이상</StyledText> 선택해주세요.
+					</StyledText>
 				</View>
 				<View style={ styles.form }>
 					{

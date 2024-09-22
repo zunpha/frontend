@@ -1,5 +1,5 @@
 import {Image, StyleSheet, TouchableOpacity, useColorScheme, View} from "react-native";
-import Text from "@/components/Text";
+import { StyledText } from "@/components/ui/atoms";
 import {TextSize} from "@/enums/TextSize";
 import DotMenuIcon from "@/components/icons/DotMenu";
 import {Colors} from "@/constants/Colors";
@@ -12,9 +12,9 @@ function MarketPriceSecondary({price}: { price: number }) {
 		<>
 			<View style={styles.marketPriceSecondary}>
 				<MarketChartIcon size={16} fill={Colors[colorScheme]['grayScale.primary40']} />
-				<Text size={TextSize.BodySmall} color={'grayScale.primary40'}>
+				<StyledText size={TextSize.BodySmall} color={'grayScale.primary40'}>
 					{price.toLocaleString()}
-				</Text>
+				</StyledText>
 			</View>
 		</>
 	)
@@ -23,22 +23,22 @@ function MarketPriceSecondary({price}: { price: number }) {
 function LocationAndTime({location, time}: { location: string, time: string }) {
 	return (
 		<View style={styles.locationAndTimeContainer}>
-			<Text size={TextSize.LabelLarge} color={'grayScale.primary50'}>
+			<StyledText size={TextSize.LabelLarge} color={'grayScale.primary50'}>
 				{location}
-			</Text>
-			<Text size={TextSize.LabelLarge} color={'grayScale.primary50'}>|</Text>
-			<Text size={TextSize.LabelLarge} color={'grayScale.primary50'}>
+			</StyledText>
+			<StyledText size={TextSize.LabelLarge} color={'grayScale.primary50'}>|</StyledText>
+			<StyledText size={TextSize.LabelLarge} color={'grayScale.primary50'}>
 				{time}
-			</Text>
+			</StyledText>
 		</View>
 	)
 }
 
 function PriceText({price}: { price: number }) {
 	return (
-		<Text size={TextSize.HeadingSmall} color={'grayScale.primary100'}>
+		<StyledText size={TextSize.HeadingSmall} color={'grayScale.primary100'}>
 			{price.toLocaleString()}원
-		</Text>
+		</StyledText>
 	)
 }
 
@@ -57,10 +57,10 @@ export default function Article({imageUrl, title, children}: ArticleProps) {
 			}}/>
 			<View style={styles.contentContainer}>
 				<View style={styles.titleContainer}>
-					<Text size={TextSize.BodyLarge} color={'grayScale.primary90'} style={styles.articleTitle}
+					<StyledText size={TextSize.BodyLarge} color={'grayScale.primary90'} style={styles.articleTitle}
 					      numberOfLines={1}>
 						{title}
-					</Text>
+					</StyledText>
 					<TouchableOpacity style={styles.dotMenuPressable}>
 						<DotMenuIcon fill={Colors[colorScheme]['grayScale.primary60']} size={20}/>
 					</TouchableOpacity>

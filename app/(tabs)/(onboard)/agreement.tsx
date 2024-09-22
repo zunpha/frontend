@@ -1,8 +1,7 @@
 import {StyleSheet} from 'react-native';
-import Text from '@/components/Text';
 import {TextSize} from '@/enums/TextSize';
 import View from '@/components/View';
-import Button from '@/components/ui/atoms/Button';
+import {Button, StyledText} from '@/components/ui/atoms';
 import Checkbox from '@/components/Checkbox';
 import useAgreementStore from '@/stores/agreementStore';
 import {router} from 'expo-router';
@@ -21,19 +20,19 @@ export default function AgreementScreen() {
 		<View style={ { flex: 1 } }>
 			<View style={ styles.container }>
 				<View style={ styles.title }>
-					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
+					<StyledText size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
 						원활한 사용을 위해
-					</Text>
-					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
+					</StyledText>
+					<StyledText size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
 						이용 약관에 동의해주세요.
-					</Text>
+					</StyledText>
 				</View>
 				<View style={ styles.form }>
 					<View style={ styles.entireCheckbox }>
 						<Checkbox checked={ entire } setChecked={ setEntire } />
-						<Text size={ TextSize.BodyLarge } color={ 'grayScale.primary80' }>
+						<StyledText size={ TextSize.BodyLarge } color={ 'grayScale.primary80' }>
 							약관 전체 동의
-						</Text>
+						</StyledText>
 					</View>
 					<View style={ styles.line } backgroundColor={ 'grayScale.primary20' } />
 					<View style={ styles.checkboxList }>
@@ -136,12 +135,12 @@ function Agreement({
 		<View style={ agreementStyles.container }>
 			<Checkbox checked={ checked } setChecked={ onChange } />
 			<View style={ agreementStyles.text }>
-				<Text size={ TextSize.BodyLarge } color={ required ? 'system.negative50' : 'grayScale.primary50' }>
+				<StyledText size={ TextSize.BodyLarge } color={ required ? 'system.negative50' : 'grayScale.primary50' }>
 					{ required ? '[필수]' : '[선택]' }
-				</Text>
-				<Text size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>
+				</StyledText>
+				<StyledText size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>
 					{ text }
-				</Text>
+				</StyledText>
 			</View>
 		</View>
 	);

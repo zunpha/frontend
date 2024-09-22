@@ -1,9 +1,8 @@
 import {Keyboard, Pressable, StyleSheet} from 'react-native';
-import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
 import View from '@/components/View';
 import Textfield from '@/components/Textfield';
-import Button from '@/components/ui/atoms/Button';
+import {Button, StyledText} from '@/components/ui/atoms';
 import useOnboardStore from '@/stores/onboardStore';
 import { router } from 'expo-router';
 
@@ -20,12 +19,12 @@ export default function NicknameScreen() {
 		} } accessible={ true }>
 			<View style={ styles.container }>
 				<View style={ styles.title }>
-					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
+					<StyledText size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
 						전파에서 사용하실
-					</Text>
-					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
+					</StyledText>
+					<StyledText size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
 						닉네임을 입력해주세요.
-					</Text>
+					</StyledText>
 				</View>
 				<View style={ styles.form }>
 					<Textfield

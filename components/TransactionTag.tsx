@@ -1,9 +1,9 @@
 import {TransactionType} from "@/types/transaction";
 import {StyleSheet, useColorScheme, View} from "react-native";
-import Text from "@/components/Text";
 import {TextSize} from "@/enums/TextSize";
 import {Colors} from "@/constants/Colors";
 import {IColorToken} from "@/types/color";
+import {StyledText} from "@/components/ui/atoms";
 
 interface TransactionTagProps {
     type: TransactionType;
@@ -35,9 +35,9 @@ export default function TransactionTag({ type }: TransactionTagProps) {
 
     return (
         <View style={[styles.tag, { backgroundColor, width: containerWidth[type] }]}>
-            <Text size={TextSize.LabelLarge} color="white">
+            <StyledText size={TextSize.LabelLarge} color="white">
                 {displayText}
-            </Text>
+            </StyledText>
         </View>
     );
 }

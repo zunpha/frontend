@@ -1,9 +1,9 @@
 import View from "@/components/View";
 import {Platform, StyleSheet, TouchableOpacity, useColorScheme} from "react-native";
-import Text from "@/components/Text";
 import {TextSize} from "@/enums/TextSize";
 import {cloneElement, ReactElement, ReactNode} from "react";
 import {Colors} from "@/constants/Colors";
+import {StyledText} from "@/components/ui/atoms";
 
 
 interface ItemProps {
@@ -24,9 +24,9 @@ function Item({icon, title, selected, onClick}: ItemProps) {
 	return (
 		<TouchableOpacity style={styles.itemContainer} onPress={onClick} activeOpacity={0.7}>
 			{modifiedIcon}
-			<Text size={TextSize.BodySmall} color={selected ? 'brand.blue50' : 'grayScale.primary30'}>
+			<StyledText size={TextSize.BodySmall} color={selected ? 'brand.blue50' : 'grayScale.primary30'}>
 				{title}
-			</Text>
+			</StyledText>
 		</TouchableOpacity>
 	);
 }

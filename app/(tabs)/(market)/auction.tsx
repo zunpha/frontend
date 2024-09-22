@@ -1,8 +1,8 @@
-import Text from "@/components/Text";
 import {TextSize} from "@/enums/TextSize";
+import {StyledText} from "@/components/ui/atoms";
 
 export default function PageMarketAuction() {
 	return (
-		<Text size={TextSize.TitleMedium} color={'brand.blue50'}>Auction</Text>
+		<StyledText size={TextSize.TitleMedium} color={'brand.blue50'}>Auction</StyledText>
 	)
 }

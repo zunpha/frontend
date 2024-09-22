@@ -1,9 +1,9 @@
 import ErrorIcon from '@/components/icons/ErrorIcon';
-import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
 import {StyleSheet, StyleSheetProperties, useColorScheme} from 'react-native';
 import { AnimatePresence, MotiView } from 'moti';
 import { useEffect, useState } from 'react';
+import {StyledText} from "@/components/ui/atoms";
 
 interface ToastProps {
 	text: string;
@@ -56,9 +56,9 @@ export default function Toast({
 					} }
 				>
 					<ErrorIcon />
-					<Text size={ TextSize.BodyLarge } color={ 'system.negative50' }>
+					<StyledText size={ TextSize.BodyLarge } color={ 'system.negative50' }>
 						{ text }
-					</Text>
+					</StyledText>
 				</MotiView>
 			) }
 		</AnimatePresence>

@@ -1,8 +1,7 @@
 import { Image, SafeAreaView, StyleSheet } from 'react-native';
 import View from '@/components/View';
-import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
-import Button from '@/components/ui/atoms/Button';
+import {Button, StyledText} from '@/components/ui/atoms';
 import Svg, { Path } from 'react-native-svg';
 import Onboard_Title from '@/assets/images/onboard_image.png';
 import { router } from 'expo-router';
@@ -33,8 +32,8 @@ export default function TabOneScreen() {
 					router.push('/(onboard)/signup');
 				} }>전파 시작하기</Button>
 				<View style={ styles.reLoginContainer }>
-					<Text size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>이미 계정이 있나요?</Text>
-					<Text size={ TextSize.BodyLarge } color={ 'brand.blue50' }>로그인</Text>
+					<StyledText size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>이미 계정이 있나요?</StyledText>
+					<StyledText size={ TextSize.BodyLarge } color={ 'brand.blue50' }>로그인</StyledText>
 				</View>
 			</View>
 		</SafeAreaView>
