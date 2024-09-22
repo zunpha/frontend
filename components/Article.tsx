@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
 		borderRadius: 12,
 
 		marginTop: -5, // 아이콘이 텍스트와 수직 정렬되도록 함
+		marginRight: -13 // 아이콘이 오른쪽에 붙지 않도록 함
 	},
 
 	locationAndTimeContainer: {
