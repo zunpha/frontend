@@ -18,7 +18,9 @@ export default function Checkbox({ checked, setChecked, type = 'default' }: Chec
 	return (
 		<Pressable onPress={ () => setChecked(!checked) }>
 			<MotiView
-				from={ {
+				style={ {
+					...styles.container,
+					borderColor: Colors[colorScheme]['grayScale.primary50'],
 					backgroundColor: checked ? 'transparent' : Colors[colorScheme]['brand.blue50'],
 					borderRadius: type === 'round' ? 12 : 4.8,
 					borderWidth: checked ? 0 : 2,
@@ -32,10 +34,6 @@ export default function Checkbox({ checked, setChecked, type = 'default' }: Chec
 					type: 'timing',
 					duration: 200,  // 애니메이션 지속 시간을 조정
 					easing: Easing.inOut(Easing.ease),  // 자연스러운 전환을 위한 easing 함수
-				} }
-				style={ {
-					...styles.container,
-					borderColor: Colors[colorScheme]['grayScale.primary50'],
 				} }
 			>
 				{ checked && <CheckIcon /> }

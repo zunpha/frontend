@@ -30,7 +30,7 @@ export default function TabOneScreen() {
 			</View>
 			<View style={ styles.actionButtonContainer }>
 				<Button radius={ 12 } height={ 52 } onPress={ () => {
-					router.push('/(onboard)/agreement');
+					router.push('/(onboard)/signup');
 				} }>전파 시작하기</Button>
 				<View style={ styles.reLoginContainer }>
 					<Text size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>이미 계정이 있나요?</Text>

@@ -30,7 +30,8 @@ export default function Category({
 				} }
 				transition={ {
 					type: 'timing',
-					duration: 100,
+					duration: 200,  // 약간 더 긴 지속 시간으로 자연스러움 증가
+					// easing: Easing.inOut(Easing.ease),  // 부드러운 전환을 위한 easing 함수
 				} }
 			>
 				<Text size={ TextSize.BodyLarge }

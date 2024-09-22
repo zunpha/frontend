@@ -51,7 +51,7 @@ export default function NicknameScreen() {
 			</View>
 			<View style={ styles.nextButton }>
 				<Button height={ 56 } disabled={ !isOk() } onPress={ () => {
-					router.push('/(onboard)/agreement');
+					router.push('/(market)/home');
 				} }>마무리하기</Button>
 			</View>
 		</Pressable>
