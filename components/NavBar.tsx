@@ -1,4 +1,4 @@
-import View from "@/components/View";
+import { View } from '@/components/ui/atoms'
 import {Platform, StyleSheet, TouchableOpacity, useColorScheme} from "react-native";
 import {TextSize} from "@/enums/TextSize";
 import {cloneElement, ReactElement, ReactNode} from "react";

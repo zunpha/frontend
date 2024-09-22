@@ -4,7 +4,7 @@ import HeaderTitleHome from '@/assets/images/service/header_title_home.png';
 import HeaderTitleAuction from '@/assets/images/service/header_title_auction.png';
 import HeaderTitleChatting from '@/assets/images/service/header_title_chatting.png';
 import HeaderTitleProfile from '@/assets/images/service/header_title_profile.png';
-import View from "@/components/View";
+import { View } from '@/components/ui/atoms'
 import SearchIcon from "@/components/icons/SearchIcon";
 import {Colors} from "@/constants/Colors";
 import NotificationIcon from "@/components/icons/NotificationIcon";

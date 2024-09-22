@@ -2,7 +2,7 @@ import React from 'react';
 import { router, Slot } from 'expo-router';
 import { SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
 import BackIcon from '@/components/icons/BackIcon';
-import View from '@/components/View';
+import { View } from '@/components/ui/atoms'
 import useToastStore from '@/stores/toastStore';
 import Toast from '@/components/Toast';
 

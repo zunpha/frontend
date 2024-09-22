@@ -1,6 +1,6 @@
 import {ScrollView} from "react-native";
 import Article from "@/components/Article";
-import View from "@/components/View";
+import { View } from '@/components/ui/atoms'
 import TransactionTag from "@/components/TransactionTag";
 import {TransactionType} from "@/types/transaction";
 

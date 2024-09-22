@@ -1,5 +1,5 @@
 import { Image, SafeAreaView, StyleSheet } from 'react-native';
-import View from '@/components/View';
+import { View } from '@/components/ui/atoms'
 import { TextSize } from '@/enums/TextSize';
 import {Button, StyledText} from '@/components/ui/atoms';
 import Svg, { Path } from 'react-native-svg';
