@@ -1,12 +1,11 @@
 import { Keyboard, Pressable, StyleSheet } from 'react-native';
 import { TextSize } from '@/enums/TextSize';
-import { View } from '@/components/ui/atoms'
-import {Button, StyledText} from '@/components/ui/atoms';
+import { Button, StyledText, View } from '@/components/ui/atoms';
 import { router } from 'expo-router';
 import useCategoryStore from '@/stores/categoryStore';
-import {Tag} from "@/components/ui/molecules";
+import { Tag } from '@/components/ui/molecules';
 
-export default function NicknameScreen() {
+export default function CategoryScreen() {
 	const {
 		categories, setCategories,
 	} = useCategoryStore((state) => state);

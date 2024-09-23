@@ -1,9 +1,8 @@
-import {StyleSheet} from 'react-native';
-import {TextSize} from '@/enums/TextSize';
-import {Checkbox, View} from '@/components/ui/atoms'
-import {Button, StyledText} from '@/components/ui/atoms';
+import { Pressable, StyleSheet } from 'react-native';
+import { TextSize } from '@/enums/TextSize';
+import { Button, Checkbox, StyledText, View } from '@/components/ui/atoms';
 import useAgreementStore from '@/stores/agreementStore';
-import {router} from 'expo-router';
+import { router } from 'expo-router';
 
 export default function AgreementScreen() {
 	const {
@@ -27,12 +26,14 @@ export default function AgreementScreen() {
 					</StyledText>
 				</View>
 				<View style={ styles.form }>
-					<View style={ styles.entireCheckbox }>
+					<Pressable style={ styles.entireCheckbox } onPress={ () => {
+						setEntire(!entire);
+					} }>
 						<Checkbox checked={ entire } setChecked={ setEntire } />
 						<StyledText size={ TextSize.BodyLarge } color={ 'grayScale.primary80' }>
 							약관 전체 동의
 						</StyledText>
-					</View>
+					</Pressable>
 					<View style={ styles.line } backgroundColor={ 'grayScale.primary20' } />
 					<View style={ styles.checkboxList }>
 						{
@@ -131,17 +132,21 @@ function Agreement({
 
                    }: AgreementProps) {
 	return (
-		<View style={ agreementStyles.container }>
-			<Checkbox checked={ checked } setChecked={ onChange } />
-			<View style={ agreementStyles.text }>
-				<StyledText size={ TextSize.BodyLarge } color={ required ? 'system.negative50' : 'grayScale.primary50' }>
-					{ required ? '[필수]' : '[선택]' }
-				</StyledText>
-				<StyledText size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>
-					{ text }
-				</StyledText>
+		<Pressable onPress={ () => {
+			onChange(!checked);
+		} }>
+			<View style={ agreementStyles.container }>
+				<Checkbox checked={ checked } setChecked={ onChange } />
+				<View style={ agreementStyles.text }>
+					<StyledText size={ TextSize.BodyLarge } color={ required ? 'system.negative50' : 'grayScale.primary50' }>
+						{ required ? '[필수]' : '[선택]' }
+					</StyledText>
+					<StyledText size={ TextSize.BodyLarge } color={ 'grayScale.primary50' }>
+						{ text }
+					</StyledText>
+				</View>
 			</View>
-		</View>
+		</Pressable>
 	);
 }
 
