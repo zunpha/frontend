@@ -1,16 +1,26 @@
-import {ScrollView} from "react-native";
+import {RefreshControl, ScrollView} from "react-native";
 import {TransactionTag, View} from '@/components/ui/atoms'
 import {TransactionType} from "@/types/transaction";
 import {Article} from "@/components/ui/organisms";
+import {useCallback, useState} from "react";
 
 export default function PageMarketHomePosts() {
+	const img_url = 'https://media.bunjang.co.kr/product/280399572_1_1721393064_w180.jpg'
+	const [refreshing, setRefreshing] = useState(false);
+
+	const onRefresh = useCallback(() => {
+		setRefreshing(true);
+		setTimeout(() => {
+			setRefreshing(false);
+		}, 2000);
+	}, []);
+
 	return (
 		<>
-			<ScrollView>
-				<Article
-					imageUrl={'https://media.bunjang.co.kr/product/280399572_1_1721393064_w180.jpg'}
-					title={'아이폰 12 프로 맥스 256GB 실버'}
-				>
+			<ScrollView refreshControl={
+	            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+	        }>
+				<Article imageUrl={img_url} title={'아이폰 12 프로 맥스 256GB 실버'}>
 					<View style={{
 						display: 'flex',
 						flexDirection: 'row',
