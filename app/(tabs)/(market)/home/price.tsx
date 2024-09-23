@@ -1,22 +1,21 @@
 import {Article} from "@/components/ui/organisms";
 import {RefreshControl, ScrollView} from "react-native";
-import {useCallback, useState} from "react";
+import useRefreshControl from "@/hooks/useRefreshControl";
 
 export default function PageMarketHomePrice() {
-	const [refreshing, setRefreshing] = useState(false);
+	const img_url = 'https://image.ajd.co.kr/EDITOR/CONTENT/e5723007-c027-4cdb-bf5b-6e260b0e1796';
 
-	const onRefresh = useCallback(() => {
-		setRefreshing(true);
-		setTimeout(() => {
-			setRefreshing(false);
-		}, 2000);
-	}, []);
+	const { refreshControlProps } = useRefreshControl({
+	    onRefresh: () => {
 
-	const img_url = 'https://image.ajd.co.kr/EDITOR/CONTENT/e5723007-c027-4cdb-bf5b-6e260b0e1796'
+	    },
+	    timeout: 2000,
+	});
+
 	return (
 		<>
 			<ScrollView refreshControl={
-	            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+	            <RefreshControl {...refreshControlProps} />
 	        }>
 				<Article imageUrl={img_url} title={'삼성TV 스마트 UHD 리퍼브 Crystal'}>
 					<Article.Spec text={'중고 UHD 기준'}/>
