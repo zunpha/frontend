@@ -44,6 +44,7 @@ Article.MarketPriceSecondary = MarketPriceSecondary;
 const styles = StyleSheet.create({
 	container: {
 		padding: 16,
+		paddingVertical: 12,
 
 		display: 'flex',
 		flexDirection: 'row',
