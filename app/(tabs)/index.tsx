@@ -1,7 +1,6 @@
 import { Image, SafeAreaView, StyleSheet } from 'react-native';
-import { View } from '@/components/ui/atoms'
+import { Button, StyledText, View } from '@/components/ui/atoms';
 import { TextSize } from '@/enums/TextSize';
-import {Button, StyledText} from '@/components/ui/atoms';
 import Svg, { Path } from 'react-native-svg';
 import Onboard_Title from '@/assets/images/onboard_image.png';
 import { router } from 'expo-router';
