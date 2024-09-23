@@ -7,11 +7,14 @@ import {ReactElement} from "react";
 import {PriceText} from "./PriceText";
 import {LocationAndTime} from "./LocationAndTime";
 import {MarketPriceSecondary} from "./MarketPriceSecondary";
+import MarketPrice from "@/components/ui/organisms/Article/MarketPrice";
+import BrandName from "@/components/ui/organisms/Article/BrandName";
+import Spec from "@/components/ui/organisms/Article/Spec";
 
 interface ArticleProps {
 	imageUrl: string;
 	title: string;
-	children?: ReactElement[];
+	children?: ReactElement[] | ReactElement;
 }
 
 export default function Article({imageUrl, title, children}: ArticleProps) {
@@ -40,6 +43,9 @@ export default function Article({imageUrl, title, children}: ArticleProps) {
 Article.PriceText = PriceText;
 Article.LocationAndTime = LocationAndTime;
 Article.MarketPriceSecondary = MarketPriceSecondary;
+Article.MarketPrice = MarketPrice;
+Article.BrandName = BrandName;
+Article.Spec = Spec;
 
 const styles = StyleSheet.create({
 	container: {
@@ -48,7 +54,7 @@ const styles = StyleSheet.create({
 
 		display: 'flex',
 		flexDirection: 'row',
-		gap: 12,
+		gap: 16,
 	},
 	articleImage: {
 		width: 120,
