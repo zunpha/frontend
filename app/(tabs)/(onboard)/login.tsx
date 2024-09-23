@@ -1,23 +1,27 @@
-import { Keyboard, Pressable, StyleSheet, useColorScheme } from 'react-native';
+import { Keyboard, Pressable, StyleSheet } from 'react-native';
+import Text from '@/components/Text';
 import { TextSize } from '@/enums/TextSize';
-import { Button, StyledText, Textfield, View } from '@/components/ui/atoms';
+import View from '@/components/views/View';
+import Button from '@/components/Button';
+import Textfield from '@/components/Textfield';
 import { useEffect, useState } from 'react';
 import { RegexList } from '@/constants/RegexList';
 import { AnimatePresence, MotiText, MotiView } from 'moti';
 import { getSizeStyle } from '@/utils/getTextSize';
+import { useColorScheme } from '@/components/useColorScheme';
 import { Colors } from '@/constants/Colors';
 import useToastStore from '@/stores/toastStore';
 import { router } from 'expo-router';
-import useOnboardStore from '@/stores/onboardStore';
+import LoginStore from '@/stores/loginStore';
 
-export default function SignUpScreen() {
+export default function LoginScreen() {
 	const {
 		phoneNumber, setPhoneNumber,
 		isSigningUp, setIsSigningUp,
 		verificationCode, setVerificationCode,
 		isLoaded, setIsLoaded,
 		isVerified, setIsVerified,
-	} = useOnboardStore((state) => state);
+	} = LoginStore((state) => state);
 	const [ isVerifyButtonDisabled, setIsVerifyButtonDisabled ] = useState(true);
 	const [ isStartButtonDisabled, setIsStartButtonDisabled ] = useState(true);
 	const [ hasStartedSigningUp, setHasStartedSigningUp ] = useState(false); // 추가된 상태
@@ -59,7 +63,7 @@ export default function SignUpScreen() {
 		}
 	};
 
-	const { addToast } = useToastStore((state) => state);
+	const { addToast, toasts } = useToastStore((state) => state);
 
 	return (
 		<Pressable style={ {
@@ -69,12 +73,12 @@ export default function SignUpScreen() {
 		} } accessible={ true }>
 			<View style={ styles.container }>
 				<View style={ styles.title }>
-					<StyledText size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
-						어서오세요!
-					</StyledText>
-					<StyledText size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
-						전파에 오신것을 환영해요!
-					</StyledText>
+					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
+						전파에 돌아오신 것을
+					</Text>
+					<Text size={ TextSize.HeadingLarge } color={ 'grayScale.primary90' }>
+						환영해요!
+					</Text>
 				</View>
 				<View style={ styles.form }>
 					<Textfield
@@ -114,11 +118,11 @@ export default function SignUpScreen() {
 					</AnimatePresence>
 					{ !isSigningUp && (
 						<View style={ styles.contactContainer }>
-							<StyledText size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</StyledText>
+							<Text size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</Text>
 							<Pressable onPress={ () => {
 								addToast('문의하기 기능은 준비 중입니다.', 3000);
 							} }>
-								<StyledText size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</StyledText>
+								<Text size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</Text>
 							</Pressable>
 						</View>
 					) }
@@ -134,11 +138,11 @@ export default function SignUpScreen() {
 							transition={ { type: 'timing', duration: 300 } }
 						>
 							<View style={ styles.contactContainer }>
-								<StyledText size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</StyledText>
+								<Text size={ TextSize.BodySmall } color={ 'grayScale.primary50' }>전화번호를 변경하셨나요?</Text>
 								<Pressable onPress={ () => {
 									addToast('문의하기 기능은 준비 중입니다.', 3000);
 								} }>
-									<StyledText size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</StyledText>
+									<Text size={ TextSize.BodySmall } color={ 'brand.blue50' }>문의하기</Text>
 								</Pressable>
 							</View>
 						</MotiText>

@@ -1,8 +1,8 @@
-import {Pressable, StyleSheet, useColorScheme} from 'react-native';
+import { Pressable, StyleSheet, useColorScheme } from 'react-native';
 import { TextSize } from '@/enums/TextSize';
 import { Colors } from '@/constants/Colors';
 import { MotiView } from 'moti';
-import {StyledText} from "@/components/ui/atoms";
+import { StyledText } from '@/components/ui/atoms';
 
 interface CategoryProps {
 	text: string;
@@ -11,8 +11,8 @@ interface CategoryProps {
 }
 
 export default function Tag({
-	                                 text, checked, setChecked,
-                                 }: CategoryProps) {
+	                            text, checked, setChecked,
+                            }: CategoryProps) {
 	const colorScheme = useColorScheme() ?? 'light';
 
 	return (
@@ -34,7 +34,7 @@ export default function Tag({
 				} }
 			>
 				<StyledText size={ TextSize.BodyLarge }
-				      color={ checked ? 'brand.blue50' : 'grayScale.primary60' }>
+				            color={ checked ? 'brand.blue50' : 'grayScale.primary60' }>
 					{ text }
 				</StyledText>
 			</MotiView>
