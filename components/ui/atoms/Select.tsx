@@ -22,7 +22,7 @@ const Select = ({name, state, render}: SelectProps) => {
 				...styles.container,
 				borderColor: Colors[colorScheme]['grayScale.primary30'],
 			}}>
-				<Text size={TextSize.BodyLarge} style={{ marginTop: -2 }} color={'grayScale.primary50'}>{state !== '' ? state : name}</Text>
+				<Text size={TextSize.BodyLarge} style={{ marginTop: -2 }} color={state !== '' ? 'grayScale.primary90' : 'grayScale.primary50'}>{state !== '' ? state : name}</Text>
 				<ArrowDownIcon size={20} fill={Colors[colorScheme]['grayScale.primary80']} />
 			</TouchableOpacity>
 			{visibleRenderer && render}
