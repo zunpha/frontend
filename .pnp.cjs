@@ -29,6 +29,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@babel/core", "npm:7.25.2"],\
           ["@expo/vector-icons", "npm:14.0.3"],\
+          ["@gorhom/bottom-sheet", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:4.6.4"],\
+          ["@react-native-picker/picker", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:2.8.1"],\
           ["@react-navigation/native", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:6.1.18"],\
           ["@types/react", "npm:18.2.79"],\
           ["expo", "npm:51.0.32"],\
@@ -51,31 +53,10 @@ const RAW_RUNTIME_STATE =
           ["react-native-svg", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:15.2.0"],\
           ["react-native-web", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:0.19.12"],\
           ["react-test-renderer", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:18.2.0"],\
-          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
+          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
+          ["zustand", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:5.0.0-rc.2"]\
         ],\
         "linkType": "SOFT"\
-      }]\
-    ]],\
-    ["@0no-co/graphql.web", [\
-      ["npm:1.0.8", {\
-        "packageLocation": "../../.yarn/berry/cache/@0no-co-graphql.web-npm-1.0.8-243708e9ab-10c0.zip/node_modules/@0no-co/graphql.web/",\
-        "packageDependencies": [\
-          ["@0no-co/graphql.web", "npm:1.0.8"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:8c6b3ea324435f920cc4c908f5cbfb06f32803fa74228dcab0de1a55f4d4850d9ee258090f2887f61ce107fc2129c8a01287a04d66abc2af6d2ccc42ff5ee4bd#npm:1.0.8", {\
-        "packageLocation": "./.yarn/__virtual__/@0no-co-graphql.web-virtual-29969c4cb5/3/.yarn/berry/cache/@0no-co-graphql.web-npm-1.0.8-243708e9ab-10c0.zip/node_modules/@0no-co/graphql.web/",\
-        "packageDependencies": [\
-          ["@0no-co/graphql.web", "virtual:8c6b3ea324435f920cc4c908f5cbfb06f32803fa74228dcab0de1a55f4d4850d9ee258090f2887f61ce107fc2129c8a01287a04d66abc2af6d2ccc42ff5ee4bd#npm:1.0.8"],\
-          ["@types/graphql", null],\
-          ["graphql", null]\
-        ],\
-        "packagePeers": [\
-          "@types/graphql",\
-          "graphql"\
-        ],\
-        "linkType": "HARD"\
       }]\
     ]],\
     ["@ampproject/remapping", [\
@@ -3275,6 +3256,69 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@gorhom/bottom-sheet", [\
+      ["npm:4.6.4", {\
+        "packageLocation": "../../.yarn/berry/cache/@gorhom-bottom-sheet-npm-4.6.4-5b2c27bb1f-10c0.zip/node_modules/@gorhom/bottom-sheet/",\
+        "packageDependencies": [\
+          ["@gorhom/bottom-sheet", "npm:4.6.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:4.6.4", {\
+        "packageLocation": "./.yarn/__virtual__/@gorhom-bottom-sheet-virtual-bef10ac344/3/.yarn/berry/cache/@gorhom-bottom-sheet-npm-4.6.4-5b2c27bb1f-10c0.zip/node_modules/@gorhom/bottom-sheet/",\
+        "packageDependencies": [\
+          ["@gorhom/bottom-sheet", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:4.6.4"],\
+          ["@gorhom/portal", "virtual:bef10ac3447611f083f0ff9d56aa3a5ee8c20e191afc3781be5356a09be348fd204ecbf4f57201667fdc48515c46b982f1e2c778ee378ea131235b31dd768189#npm:1.0.14"],\
+          ["@types/react", "npm:18.2.79"],\
+          ["@types/react-native", null],\
+          ["@types/react-native-gesture-handler", null],\
+          ["@types/react-native-reanimated", null],\
+          ["invariant", "npm:2.2.4"],\
+          ["react", "npm:18.2.0"],\
+          ["react-native", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:0.74.5"],\
+          ["react-native-gesture-handler", null],\
+          ["react-native-reanimated", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:3.10.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-native-gesture-handler",\
+          "@types/react-native-reanimated",\
+          "@types/react-native",\
+          "@types/react",\
+          "react-native-gesture-handler",\
+          "react-native-reanimated",\
+          "react-native",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@gorhom/portal", [\
+      ["npm:1.0.14", {\
+        "packageLocation": "../../.yarn/berry/cache/@gorhom-portal-npm-1.0.14-3f1ca607aa-10c0.zip/node_modules/@gorhom/portal/",\
+        "packageDependencies": [\
+          ["@gorhom/portal", "npm:1.0.14"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:bef10ac3447611f083f0ff9d56aa3a5ee8c20e191afc3781be5356a09be348fd204ecbf4f57201667fdc48515c46b982f1e2c778ee378ea131235b31dd768189#npm:1.0.14", {\
+        "packageLocation": "./.yarn/__virtual__/@gorhom-portal-virtual-231e8c88a8/3/.yarn/berry/cache/@gorhom-portal-npm-1.0.14-3f1ca607aa-10c0.zip/node_modules/@gorhom/portal/",\
+        "packageDependencies": [\
+          ["@gorhom/portal", "virtual:bef10ac3447611f083f0ff9d56aa3a5ee8c20e191afc3781be5356a09be348fd204ecbf4f57201667fdc48515c46b982f1e2c778ee378ea131235b31dd768189#npm:1.0.14"],\
+          ["@types/react", "npm:18.2.79"],\
+          ["@types/react-native", null],\
+          ["nanoid", "npm:3.3.7"],\
+          ["react", "npm:18.2.0"],\
+          ["react-native", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:0.74.5"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-native",\
+          "@types/react",\
+          "react-native",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@graphql-typed-document-node/core", [\
       ["npm:3.2.0", {\
         "packageLocation": "../../.yarn/berry/cache/@graphql-typed-document-node-core-npm-3.2.0-505adb1e90-10c0.zip/node_modules/@graphql-typed-document-node/core/",\
@@ -3378,7 +3422,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@jest/console", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["chalk", "npm:4.1.2"],\
           ["jest-message-util", "npm:29.7.0"],\
           ["jest-util", "npm:29.7.0"],\
@@ -3404,7 +3448,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/test-result", "npm:29.7.0"],\
           ["@jest/transform", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["@types/node-notifier", null],\
           ["ansi-escapes", "npm:4.3.2"],\
           ["chalk", "npm:4.1.2"],\
@@ -3454,7 +3498,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/environment", "npm:29.7.0"],\
           ["@jest/fake-timers", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["jest-mock", "npm:29.7.0"]\
         ],\
         "linkType": "HARD"\
@@ -3488,7 +3532,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/fake-timers", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
           ["@sinonjs/fake-timers", "npm:10.3.0"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["jest-message-util", "npm:29.7.0"],\
           ["jest-mock", "npm:29.7.0"],\
           ["jest-util", "npm:29.7.0"]\
@@ -3527,7 +3571,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/transform", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
           ["@jridgewell/trace-mapping", "npm:0.3.25"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["@types/node-notifier", null],\
           ["chalk", "npm:4.1.2"],\
           ["collect-v8-coverage", "npm:1.0.2"],\
@@ -3644,7 +3688,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/types", "npm:26.6.2"],\
           ["@types/istanbul-lib-coverage", "npm:2.0.6"],\
           ["@types/istanbul-reports", "npm:3.0.4"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["@types/yargs", "npm:15.0.19"],\
           ["chalk", "npm:4.1.2"]\
         ],\
@@ -3657,7 +3701,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/schemas", "npm:29.6.3"],\
           ["@types/istanbul-lib-coverage", "npm:2.0.6"],\
           ["@types/istanbul-reports", "npm:3.0.4"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["@types/yargs", "npm:17.0.33"],\
           ["chalk", "npm:4.1.2"]\
         ],\
@@ -4095,6 +4139,32 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@react-native-community/cli-types", "npm:13.6.9"],\
           ["joi", "npm:17.13.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@react-native-picker/picker", [\
+      ["npm:2.8.1", {\
+        "packageLocation": "./.yarn/unplugged/@react-native-picker-picker-virtual-eccb088139/node_modules/@react-native-picker/picker/",\
+        "packageDependencies": [\
+          ["@react-native-picker/picker", "npm:2.8.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:2.8.1", {\
+        "packageLocation": "./.yarn/unplugged/@react-native-picker-picker-virtual-eccb088139/node_modules/@react-native-picker/picker/",\
+        "packageDependencies": [\
+          ["@react-native-picker/picker", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:2.8.1"],\
+          ["@types/react", "npm:18.2.79"],\
+          ["@types/react-native", null],\
+          ["react", "npm:18.2.0"],\
+          ["react-native", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:0.74.5"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-native",\
+          "@types/react",\
+          "react-native",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4881,7 +4951,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@types-graceful-fs-npm-4.1.9-ebd697fe83-10c0.zip/node_modules/@types/graceful-fs/",\
         "packageDependencies": [\
           ["@types/graceful-fs", "npm:4.1.9"],\
-          ["@types/node", "npm:22.5.5"]\
+          ["@types/node", "npm:18.19.50"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4929,7 +4999,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@types-jsdom-npm-20.0.1-5bb899e006-10c0.zip/node_modules/@types/jsdom/",\
         "packageDependencies": [\
           ["@types/jsdom", "npm:20.0.1"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["@types/tough-cookie", "npm:4.0.5"],\
           ["parse5", "npm:7.1.2"]\
         ],\
@@ -4953,14 +5023,6 @@ const RAW_RUNTIME_STATE =
           ["undici-types", "npm:5.26.5"]\
         ],\
         "linkType": "HARD"\
-      }],\
-      ["npm:22.5.5", {\
-        "packageLocation": "../../.yarn/berry/cache/@types-node-npm-22.5.5-e8a43f7042-10c0.zip/node_modules/@types/node/",\
-        "packageDependencies": [\
-          ["@types/node", "npm:22.5.5"],\
-          ["undici-types", "npm:6.19.8"]\
-        ],\
-        "linkType": "HARD"\
       }]\
     ]],\
     ["@types/node-forge", [\
@@ -4968,7 +5030,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@types-node-forge-npm-1.3.11-132541fb70-10c0.zip/node_modules/@types/node-forge/",\
         "packageDependencies": [\
           ["@types/node-forge", "npm:1.3.11"],\
-          ["@types/node", "npm:22.5.5"]\
+          ["@types/node", "npm:18.19.50"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5054,15 +5116,6 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["npm:5.0.6", {\
-        "packageLocation": "../../.yarn/berry/cache/@urql-core-npm-5.0.6-8c6b3ea324-10c0.zip/node_modules/@urql/core/",\
-        "packageDependencies": [\
-          ["@urql/core", "npm:5.0.6"],\
-          ["@0no-co/graphql.web", "virtual:8c6b3ea324435f920cc4c908f5cbfb06f32803fa74228dcab0de1a55f4d4850d9ee258090f2887f61ce107fc2129c8a01287a04d66abc2af6d2ccc42ff5ee4bd#npm:1.0.8"],\
-          ["wonka", "npm:6.3.4"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["virtual:2feb66792d6bd25110f2656e52e50395d0ff308986c804c79edd0534056332c7420a78021efd698558befcdb2c6f2148034353010db51aefcad2e13948bc2119#npm:2.3.6", {\
         "packageLocation": "./.yarn/__virtual__/@urql-core-virtual-75297c578b/3/.yarn/berry/cache/@urql-core-npm-2.3.6-20957b363b-10c0.zip/node_modules/@urql/core/",\
         "packageDependencies": [\
@@ -5092,7 +5145,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@urql/exchange-retry", "virtual:2feb66792d6bd25110f2656e52e50395d0ff308986c804c79edd0534056332c7420a78021efd698558befcdb2c6f2148034353010db51aefcad2e13948bc2119#npm:0.3.0"],\
           ["@types/graphql", null],\
-          ["@urql/core", "npm:5.0.6"],\
+          ["@urql/core", "virtual:2feb66792d6bd25110f2656e52e50395d0ff308986c804c79edd0534056332c7420a78021efd698558befcdb2c6f2148034353010db51aefcad2e13948bc2119#npm:2.3.6"],\
           ["graphql", "npm:15.8.0"],\
           ["wonka", "npm:4.0.15"]\
         ],\
@@ -6282,7 +6335,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/chrome-launcher-npm-0.15.2-bafd42e412-10c0.zip/node_modules/chrome-launcher/",\
         "packageDependencies": [\
           ["chrome-launcher", "npm:0.15.2"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["escape-string-regexp", "npm:4.0.0"],\
           ["is-wsl", "npm:2.2.0"],\
           ["lighthouse-logger", "npm:1.4.2"]\
@@ -6469,7 +6522,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/color-string-npm-1.9.1-dc020e56be-10c0.zip/node_modules/color-string/",\
         "packageDependencies": [\
           ["color-string", "npm:1.9.1"],\
-          ["color-name", "npm:1.1.4"],\
+          ["color-name", "npm:1.1.3"],\
           ["simple-swizzle", "npm:0.2.2"]\
         ],\
         "linkType": "HARD"\
@@ -6556,7 +6609,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/compressible-npm-2.0.18-ee5ab04d88-10c0.zip/node_modules/compressible/",\
         "packageDependencies": [\
           ["compressible", "npm:2.0.18"],\
-          ["mime-db", "npm:1.53.0"]\
+          ["mime-db", "npm:1.52.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -9674,7 +9727,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/expect", "npm:29.7.0"],\
           ["@jest/test-result", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["chalk", "npm:4.1.2"],\
           ["co", "npm:4.6.0"],\
           ["dedent", "virtual:f7679858c638e2e5ade31901dd2b1e5007918fdc7d84fefb11f4200f46ba2e43b9d662fb793507b517bb1e725144e51f6d68f60f9f6100fd52144f042f58f0bc#npm:1.5.3"],\
@@ -9779,7 +9832,7 @@ const RAW_RUNTIME_STATE =
           ["@babel/core", "npm:7.25.2"],\
           ["@jest/test-sequencer", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["@types/ts-node", null],\
           ["babel-jest", "virtual:1deb448c91690fbf9ef65754225a3f5845f25256135a719c195bdc0f79ea8373f0300ca9202f68874d69052f0abd9f1178860ceb46bdfaa50d2ef4c72782113f#npm:29.7.0"],\
           ["chalk", "npm:4.1.2"],\
@@ -9864,7 +9917,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/types", "npm:29.6.3"],\
           ["@types/canvas", null],\
           ["@types/jsdom", "npm:20.0.1"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["canvas", null],\
           ["jest-mock", "npm:29.7.0"],\
           ["jest-util", "npm:29.7.0"],\
@@ -9885,7 +9938,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/environment", "npm:29.7.0"],\
           ["@jest/fake-timers", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["jest-mock", "npm:29.7.0"],\
           ["jest-util", "npm:29.7.0"]\
         ],\
@@ -9929,7 +9982,7 @@ const RAW_RUNTIME_STATE =
           ["jest-haste-map", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
           ["@types/graceful-fs", "npm:4.1.9"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["anymatch", "npm:3.1.3"],\
           ["fb-watchman", "npm:2.0.2"],\
           ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"],\
@@ -9991,7 +10044,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["jest-mock", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["jest-util", "npm:29.7.0"]\
         ],\
         "linkType": "HARD"\
@@ -10067,7 +10120,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/test-result", "npm:29.7.0"],\
           ["@jest/transform", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["chalk", "npm:4.1.2"],\
           ["emittery", "npm:0.13.1"],\
           ["graceful-fs", "npm:4.2.11"],\
@@ -10099,7 +10152,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/test-result", "npm:29.7.0"],\
           ["@jest/transform", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["chalk", "npm:4.1.2"],\
           ["cjs-module-lexer", "npm:1.4.1"],\
           ["collect-v8-coverage", "npm:1.0.2"],\
@@ -10153,7 +10206,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["jest-util", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["chalk", "npm:4.1.2"],\
           ["ci-info", "npm:3.9.0"],\
           ["graceful-fs", "npm:4.2.11"],\
@@ -10225,7 +10278,7 @@ const RAW_RUNTIME_STATE =
           ["jest-watcher", "npm:29.7.0"],\
           ["@jest/test-result", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["ansi-escapes", "npm:4.3.2"],\
           ["chalk", "npm:4.1.2"],\
           ["emittery", "npm:0.13.1"],\
@@ -10240,7 +10293,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/jest-worker-npm-29.7.0-4d3567fed6-10c0.zip/node_modules/jest-worker/",\
         "packageDependencies": [\
           ["jest-worker", "npm:29.7.0"],\
-          ["@types/node", "npm:22.5.5"],\
+          ["@types/node", "npm:18.19.50"],\
           ["jest-util", "npm:29.7.0"],\
           ["merge-stream", "npm:2.0.0"],\
           ["supports-color", "npm:8.1.1"]\
@@ -11192,13 +11245,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/mime-db-npm-1.52.0-b5371d6fd2-10c0.zip/node_modules/mime-db/",\
         "packageDependencies": [\
           ["mime-db", "npm:1.52.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["npm:1.53.0", {\
-        "packageLocation": "../../.yarn/berry/cache/mime-db-npm-1.53.0-14fcdba2be-10c0.zip/node_modules/mime-db/",\
-        "packageDependencies": [\
-          ["mime-db", "npm:1.53.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -12748,7 +12794,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["react-native-web", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:0.19.12"],\
           ["@babel/runtime", "npm:7.25.6"],\
-          ["@react-native/normalize-colors", "npm:0.74.87"],\
+          ["@react-native/normalize-colors", "npm:0.74.85"],\
           ["@types/react", "npm:18.2.79"],\
           ["@types/react-dom", null],\
           ["fbjs", "npm:3.0.5"],\
@@ -12793,7 +12839,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.2.79"],\
           ["object-assign", "npm:4.1.1"],\
           ["react", "npm:18.2.0"],\
-          ["react-is", "npm:18.3.1"]\
+          ["react-is", "npm:16.13.1"]\
         ],\
         "packagePeers": [\
           "@types/react",\
@@ -12808,7 +12854,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", null],\
           ["object-assign", "npm:4.1.1"],\
           ["react", null],\
-          ["react-is", "npm:18.3.1"]\
+          ["react-is", "npm:16.13.1"]\
         ],\
         "packagePeers": [\
           "@types/react",\
@@ -12878,7 +12924,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["readable-stream", "npm:3.6.2"],\
           ["inherits", "npm:2.0.4"],\
-          ["string_decoder", "npm:1.3.0"],\
+          ["string_decoder", "npm:1.1.1"],\
           ["util-deprecate", "npm:1.0.2"]\
         ],\
         "linkType": "HARD"\
@@ -13175,13 +13221,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/safe-buffer-npm-5.1.2-c27fedf6c4-10c0.zip/node_modules/safe-buffer/",\
         "packageDependencies": [\
           ["safe-buffer", "npm:5.1.2"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["npm:5.2.1", {\
-        "packageLocation": "../../.yarn/berry/cache/safe-buffer-npm-5.2.1-3481c8aa9b-10c0.zip/node_modules/safe-buffer/",\
-        "packageDependencies": [\
-          ["safe-buffer", "npm:5.2.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -13906,14 +13945,6 @@ const RAW_RUNTIME_STATE =
           ["safe-buffer", "npm:5.1.2"]\
         ],\
         "linkType": "HARD"\
-      }],\
-      ["npm:1.3.0", {\
-        "packageLocation": "../../.yarn/berry/cache/string_decoder-npm-1.3.0-2422117fd0-10c0.zip/node_modules/string_decoder/",\
-        "packageDependencies": [\
-          ["string_decoder", "npm:1.3.0"],\
-          ["safe-buffer", "npm:5.2.1"]\
-        ],\
-        "linkType": "HARD"\
       }]\
     ]],\
     ["strip-ansi", [\
@@ -14558,13 +14589,6 @@ const RAW_RUNTIME_STATE =
           ["undici-types", "npm:5.26.5"]\
         ],\
         "linkType": "HARD"\
-      }],\
-      ["npm:6.19.8", {\
-        "packageLocation": "../../.yarn/berry/cache/undici-types-npm-6.19.8-9f12285b7a-10c0.zip/node_modules/undici-types/",\
-        "packageDependencies": [\
-          ["undici-types", "npm:6.19.8"]\
-        ],\
-        "linkType": "HARD"\
       }]\
     ]],\
     ["unicode-canonical-property-names-ecmascript", [\
@@ -15070,13 +15094,6 @@ const RAW_RUNTIME_STATE =
           ["wonka", "npm:4.0.15"]\
         ],\
         "linkType": "HARD"\
-      }],\
-      ["npm:6.3.4", {\
-        "packageLocation": "../../.yarn/berry/cache/wonka-npm-6.3.4-b7f4737821-10c0.zip/node_modules/wonka/",\
-        "packageDependencies": [\
-          ["wonka", "npm:6.3.4"]\
-        ],\
-        "linkType": "HARD"\
       }]\
     ]],\
     ["wrap-ansi", [\
@@ -15428,6 +15445,8 @@ const RAW_RUNTIME_STATE =
           ["zunpa", "workspace:."],\
           ["@babel/core", "npm:7.25.2"],\
           ["@expo/vector-icons", "npm:14.0.3"],\
+          ["@gorhom/bottom-sheet", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:4.6.4"],\
+          ["@react-native-picker/picker", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:2.8.1"],\
           ["@react-navigation/native", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:6.1.18"],\
           ["@types/react", "npm:18.2.79"],\
           ["expo", "npm:51.0.32"],\
@@ -15450,9 +15469,40 @@ const RAW_RUNTIME_STATE =
           ["react-native-svg", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:15.2.0"],\
           ["react-native-web", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:0.19.12"],\
           ["react-test-renderer", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:18.2.0"],\
-          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
+          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
+          ["zustand", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:5.0.0-rc.2"]\
         ],\
         "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["zustand", [\
+      ["npm:5.0.0-rc.2", {\
+        "packageLocation": "../../.yarn/berry/cache/zustand-npm-5.0.0-rc.2-260b1122e1-10c0.zip/node_modules/zustand/",\
+        "packageDependencies": [\
+          ["zustand", "npm:5.0.0-rc.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:5.0.0-rc.2", {\
+        "packageLocation": "./.yarn/__virtual__/zustand-virtual-b353546a73/3/.yarn/berry/cache/zustand-npm-5.0.0-rc.2-260b1122e1-10c0.zip/node_modules/zustand/",\
+        "packageDependencies": [\
+          ["zustand", "virtual:9f099699afc73ffd74e73a2313abed1fcf5469eeaa8b6d2cbb38abf72a440744c9398bbb1e7eed696eb3c660e37c2249b2578a333085fa06ed5192e4770d3ab1#npm:5.0.0-rc.2"],\
+          ["@types/immer", null],\
+          ["@types/react", "npm:18.2.79"],\
+          ["@types/use-sync-external-store", null],\
+          ["immer", null],\
+          ["react", "npm:18.2.0"],\
+          ["use-sync-external-store", null]\
+        ],\
+        "packagePeers": [\
+          "@types/immer",\
+          "@types/react",\
+          "@types/use-sync-external-store",\
+          "immer",\
+          "react",\
+          "use-sync-external-store"\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]]\
   ]\
