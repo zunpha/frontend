@@ -10,6 +10,8 @@ import {MarketPriceSecondary} from "./MarketPriceSecondary";
 import MarketPrice from "@/components/ui/organisms/Article/MarketPrice";
 import BrandName from "@/components/ui/organisms/Article/BrandName";
 import Spec from "@/components/ui/organisms/Article/Spec";
+import AuctionParticipatingUser from "@/components/ui/organisms/Article/AuctionParticipatingUser";
+import AuctionRemainingTime from "@/components/ui/organisms/Article/AuctionRemainingTime";
 
 interface ArticleProps {
 	imageUrl: string;
@@ -46,6 +48,8 @@ Article.MarketPriceSecondary = MarketPriceSecondary;
 Article.MarketPrice = MarketPrice;
 Article.BrandName = BrandName;
 Article.Spec = Spec;
+Article.AuctionParticipatingUser = AuctionParticipatingUser;
+Article.AuctionRemainingTime = AuctionRemainingTime;
 
 const styles = StyleSheet.create({
 	container: {
