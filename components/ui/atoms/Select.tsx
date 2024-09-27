@@ -1,4 +1,3 @@
-import View from "@/components/ui/atoms/View";
 import {StyleSheet, TouchableOpacity, useColorScheme} from "react-native";
 import Text from "@/components/ui/atoms/Text";
 import {TextSize} from "@/enums/TextSize";
@@ -10,7 +9,7 @@ interface SelectProps {
 	name: string;
 	state: string;
 	setState: (state: string) => void;
-	render: () => ReactElement;
+	render: ReactElement;
 }
 
 const Select = ({name, state, render}: SelectProps) => {
