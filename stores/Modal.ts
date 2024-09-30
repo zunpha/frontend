@@ -8,7 +8,7 @@ interface ModalState {
 	isModalOpen: (id: string) => boolean;  // 특정 모달이 열려 있는지 확인
 }
 
-const useModal = create<ModalState>((set, get) => ({
+export const useModal = create<ModalState>((set, get) => ({
 	modals: {},
 	openModal: (id) => set((state) => ({modals: {...state.modals, [id]: true}})),
 	closeModal: (id) => set((state) => ({modals: {...state.modals, [id]: false}})),
