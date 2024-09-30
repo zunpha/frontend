@@ -8,24 +8,25 @@ import {ReactElement, useState} from "react";
 interface SelectProps {
 	name: string;
 	state: string;
-	setState: (state: string) => void;
-	render: ReactElement;
+	onClick?: () => void;
 }
 
-const Select = ({name, state, render}: SelectProps) => {
+const Select = ({name, state, onClick}: SelectProps) => {
 	const colorScheme = useColorScheme() ?? 'light';
-	const [visibleRenderer, setVisibleRenderer] = useState(false);
 
 	return (
 		<>
-			<TouchableOpacity onPress={() => setVisibleRenderer(!visibleRenderer)} style={{
+			<TouchableOpacity onPress={() => {
+				if (onClick) {
+					onClick();
+				}
+			}} style={{
 				...styles.container,
 				borderColor: Colors[colorScheme]['grayScale.primary30'],
 			}}>
 				<Text size={TextSize.BodyLarge} style={{ marginTop: -2 }} color={state !== '' ? 'grayScale.primary90' : 'grayScale.primary50'}>{state !== '' ? state : name}</Text>
 				<ArrowDownIcon size={20} fill={Colors[colorScheme]['grayScale.primary80']} />
 			</TouchableOpacity>
-			{visibleRenderer && render}
 		</>
 	)
 }
