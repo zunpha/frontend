@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Dimensions, LayoutChangeEvent, Modal as RNModal, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, LayoutChangeEvent, Modal as RNModal, Pressable, StyleSheet, View} from 'react-native';
 import {
 	HandlerStateChangeEvent,
 	PanGestureHandler,
