@@ -14,7 +14,13 @@ interface ModalProps {
 	children?: React.ReactNode;
 }
 
-export default function ModalComponent({uniqueId, children}: ModalProps) {
+/**
+ * 모달 컴포넌트
+ * @param uniqueId 모달의 고유 ID
+ * @param children 모달 내부 컨텐츠
+ */
+
+export default function Modal({uniqueId, children}: ModalProps) {
 	const {closeModal, isModalOpen} = useModal(); // Zustand 훅으로 상태를 가져옴
 	const [modalHeight, setModalHeight] = useState(0); // 모달의 높이를 저장하는 상태
 	const translateY = useSharedValue(300); // 모달이 처음에는 화면 아래에 위치
