@@ -66,7 +66,7 @@ export default function Modal({uniqueId, children}: ModalProps) {
 	};
 
 	const closeWithAnimation = () => {
-		backdropOpacity.value = withTiming(0, {duration: 300, easing: Easing.linear}); // backdrop fade-out, linear easing
+		backdropOpacity.value = withTiming(0, {duration: 200, easing: Easing.linear}); // backdrop fade-out, linear easing
 		translateY.value = withTiming(300, {duration: 300, easing: Easing.linear}); // 모달이 아래로 내려가는 애니메이션, linear easing
 		setTimeout(() => {
 			closeModal(uniqueId); // Zustand 스토어에서 모달 닫기
@@ -74,8 +74,8 @@ export default function Modal({uniqueId, children}: ModalProps) {
 	};
 
 	const openWithAnimation = () => {
-		backdropOpacity.value = withTiming(1, {duration: 300, easing: Easing.linear}); // backdrop fade-in, linear easing
-		translateY.value = withTiming(0, {duration: 300, easing: Easing.linear}); // 모달이 위로 올라오는 애니메이션, linear easing
+		backdropOpacity.value = withTiming(1, {duration: 200, easing: Easing.linear}); // backdrop fade-in, linear easing
+		translateY.value = withTiming(0, {duration: 200, easing: Easing.linear}); // 모달이 위로 올라오는 애니메이션, linear easing
 	};
 
 	// 모달이 열릴 때 애니메이션 실행
