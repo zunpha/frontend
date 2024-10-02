@@ -5,16 +5,19 @@ import {Select, StyledText, View} from "@/components/ui/atoms";
 import {TextSize} from "@/enums/TextSize";
 import {useState} from "react";
 import {Colors} from "@/constants/Colors";
+import {Modal} from "@/components/ui/molecules";
+import {useModal} from "@/stores/Modal";
+import ItemButton from "@/components/ui/molecules/ItemButton";
 
 export default function PageMarketAuction() {
 	const colorScheme = useColorScheme() ?? 'light';
 	const [filteredCategory, setFilteredCategory] = useState<string>('');
+	const {openModal} = useModal();
 
 	const img_url = 'https://image.ajd.co.kr/EDITOR/CONTENT/e5723007-c027-4cdb-bf5b-6e260b0e1796';
 
 	const {refreshControlProps} = useRefreshControl({
 		onRefresh: () => {
-
 		},
 		timeout: 2000,
 	});
@@ -28,12 +31,18 @@ export default function PageMarketAuction() {
 				<Select
 					name={'가격'}
 					state={filteredCategory}
-					setState={setFilteredCategory}
-					render={
-						<StyledText size={TextSize.BodyLarge} color={'grayScale.primary70'}>가격</StyledText>
-					}
+					onClick={() => {
+						openModal('auction_filter_category');
+					}}
 				/>
 			</View>
+			<Modal uniqueId={'auction_filter_category'}>
+				<View style={{ gap: 8, paddingBottom: 15 }}>
+					<ItemButton checked={filteredCategory === '배송비 포함'} onClick={() => setFilteredCategory('배송비 포함')}>배송비 포함</ItemButton>
+					<ItemButton checked={filteredCategory === '배송비 별도'} onClick={() => setFilteredCategory('배송비 별도')}>배송비 별도</ItemButton>
+				</View>
+			</Modal>
+
 			<ScrollView refreshControl={
 				<RefreshControl {...refreshControlProps} />
 			}>
