@@ -30,6 +30,9 @@ export default function TabLayout() {
 					title: 'Tab Two',
 				} }
 			/>
+			<Stack.Screen
+				name="(profile)"
+			/>
 		</Stack>
 	);
 }
