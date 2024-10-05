@@ -2,7 +2,7 @@ import {DarkTheme, DefaultTheme, ThemeProvider} from '@react-navigation/native';
 import {useFonts} from 'expo-font';
 import {Stack} from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import {useEffect} from 'react';
+import React, {useEffect} from 'react';
 import 'react-native-reanimated';
 
 import {Colors} from '@/constants/Colors';
@@ -63,10 +63,18 @@ function RootLayoutNav() {
 	const colorScheme = useColorScheme();
 
 	return (
-		<GestureHandlerRootView style={{ flex: 1 }}>
+		<GestureHandlerRootView style={{flex: 1}}>
 			<ThemeProvider value={colorScheme === 'dark' ? MyDarkTheme : MyDefaultTheme}>
-				<Stack>
-					<Stack.Screen name="(tabs)" options={{headerShown: false}}/>
+				<Stack
+					initialRouteName="(tabs)/index"
+					screenOptions={{
+						headerShown: false,
+					}}
+				>
+					<Stack.Screen name="(tabs)/index" options={{headerShown: false}}/>
+					<Stack.Screen name="(tabs)/(market)"/>
+					<Stack.Screen name="(tabs)/(onboard)"/>
+					<Stack.Screen name="(tabs)/two"/>
 				</Stack>
 			</ThemeProvider>
 		</GestureHandlerRootView>

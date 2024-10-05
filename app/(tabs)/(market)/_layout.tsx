@@ -82,7 +82,7 @@ export default function MarketLayout() {
 				<NavBar.Item
 					icon={ <ProfileIcon size={ 26 } /> }
 					title={ '프로필' }
-					selected={ pageName.includes('profile') }
+					selected={ pageName.includes('/(market)/profile') }
 				/>
 			</NavBar>
 		</SafeAreaView>
