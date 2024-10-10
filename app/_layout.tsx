@@ -74,6 +74,7 @@ function RootLayoutNav() {
 					<Stack.Screen name="(tabs)/index" options={{headerShown: false}}/>
 					<Stack.Screen name="(tabs)/(market)"/>
 					<Stack.Screen name="(tabs)/(onboard)"/>
+					<Stack.Screen name="(tabs)/(profile)"/>
 					<Stack.Screen name="(tabs)/two"/>
 				</Stack>
 			</ThemeProvider>
