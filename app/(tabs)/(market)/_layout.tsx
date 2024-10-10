@@ -1,4 +1,12 @@
-import { Image, ImageSourcePropType, Platform, SafeAreaView, StyleSheet, useColorScheme } from 'react-native';
+import {
+	Image,
+	ImageSourcePropType,
+	Platform,
+	SafeAreaView,
+	StyleSheet,
+	TouchableOpacity,
+	useColorScheme
+} from 'react-native';
 import { Slot, usePathname, useRouter } from 'expo-router';
 import HeaderTitleHome from '@/assets/images/service/header_title_home.png';
 import HeaderTitleAuction from '@/assets/images/service/header_title_auction.png';
@@ -51,7 +59,9 @@ export default function MarketLayout() {
 				/>
 				<View style={ styles.headerIcons }>
 					<SearchIcon fill={ Colors[colorScheme]['grayScale.primary80'] } size={ 26 } />
-					<NotificationIcon fill={ Colors[colorScheme]['grayScale.primary80'] } size={ 26 } />
+					<TouchableOpacity onPress={() => router.push('/(profile)/notification')}>
+						<NotificationIcon fill={ Colors[colorScheme]['grayScale.primary80'] } size={ 26 } />
+					</TouchableOpacity>
 				</View>
 			</View>
 			<Slot />
